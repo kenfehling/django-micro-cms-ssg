@@ -1,0 +1,11 @@
+{% load custom %}
+<div class="grid">
+    {% for cat in cats %}
+        <div>
+            {% picture cat.image.url "320x280" crop="center" alt="{{cat.name}}" %}
+            {% if show_name %}
+                <div style="margin-top: 0.25rem; text-align: center;">{{cat.name}}</div>
+            {% endif %}
+        </div>
+    {% endfor %}
+</div>

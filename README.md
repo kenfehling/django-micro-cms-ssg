@@ -1,0 +1,80 @@
+# Django Micro CMS/SSG Starter #
+Starter project / proof of concept for a simple, or "micro"
+Content Management System (CMS) based on Django Admin,
+combined with a Static Site Generator (SSG).
+
+## Features ##
+* Simple back office built on top of Django Admin, with some enhancements
+* Static site generation using 
+[django-distill](https://github.com/meeb/django-distill)
+* Multi-site support
+* Automatically manages role groups and permissions for individual sites
+* Automatically pushs generated sites to Git on updates
+* Image optimization
+
+## Philisophy ##
+This was created with a web agency in mind, building sites for
+several different clients. Whether what it provides is a CMS is
+debatable and depends on your defintion of CMS.
+It attempts to provide something more like
+[KeyStoneJS](https://keystonejs.com/) than Wordpress.
+
+It's based on the following premises:
+* Clients typically want to do minimal updates
+(e.g. changing information, adding new items).
+* Overloading nontechnical users with too many options makes them
+averse to doing any updates at all.
+* A monolithic system where the CMS and SSG are unified has
+less cognitive overhead than a system where they are separate parts
+connected by GraphQL or some other API.
+* The Python and Django ecosystems are powerful enough to rival the likes
+of popular SSGs like Gatsby and NextJS.
+* Projects like
+[petite-vue](https://github.com/vuejs/petite-vue) make it natural to
+sprinkle reactive components onto a server-rendered
+(or in this case statically generated) page, similar to the
+[Islands Architecture](https://www.patterns.dev/posts/islands-architecture)
+idea.
+
+## Usage ##
+
+### With Docker ###
+A Dockerfile is provided that does the setup for you.
+Run this command to build and run the container:
+```
+bash docker/run.sh
+```
+
+### Without Docker ###
+This script will install all dependencies and setup the database.
+
+Note: It doesn't create a virtualenv so you should do that if you want.
+```
+bash scripts/init.sh
+```
+
+### Site setup ###
+In the Admin UI you can set the Git repo and the root URL for build.
+Sites are added to this menu automatically when added to the
+SITES list in config.py
+
+![site-setup](./docs/site-setup.png)
+
+### Publishing sites ###
+If there is a Git repository configured for the site it will automatically
+push after some number of minutes since the last update made.
+With the Git repo set up, then it's the usual process of deploying to
+GitHub Pages, Netlify, Vercel, or wherever else you'd host a static site.
+
+The Git push assumes you're using SSH and you have your
+SSH public key configured. The Docker script also does
+SSH agent forwarding so i'll work inside the container.
+
+
+### Building sites manually ###
+To see the build in action without triggering the auto publish,
+you can use the `publish` command:
+```
+./manage.py publish --site=mars
+./manage.py publish --site=venus
+```

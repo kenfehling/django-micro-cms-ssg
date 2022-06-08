@@ -1,0 +1,21 @@
+{% extends "./include/base.html" %}
+{% load static %}
+{% load thumbnail %}
+{% load custom %}
+{% block head %}
+<title>Venus Cats | Cats</title>
+<meta property="og:title" content="Venus Cats | Cats" />
+<meta name="description" content="All of our cute kitties">
+<meta name="og:description" content="All of our cute kitties" />
+<meta name="keywords" content="venus, cats, kitties">
+<style>
+    .page-container {
+        margin-top: 4.2rem;
+    }
+</style>
+{% endblock %}
+{% block body %}
+<div class="page-container">
+    {% include "./include/cat_grid.html" with cats=cats|shuffle show_name=True %} 
+</div>
+{% endblock %}

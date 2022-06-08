@@ -1,0 +1,293 @@
+- model: all.sitesetup
+  pk: 1
+  fields:
+    site: mars
+    git_repo: git@github.com:kenfehling/mars-records.git
+    site_root: https://kenfehling.github.io/mars-records/
+    auto_publish_wait: 5
+    last_updated: 2022-06-05 20:30:51.931462+00:00
+    last_published: 2022-06-05 20:30:51.930979+00:00
+- model: all.sitesetup
+  pk: 2
+  fields:
+    site: venus
+    git_repo: git@github.com:kenfehling/venus-cats.git
+    site_root: https://kenfehling.github.io/venus-cats
+    auto_publish_wait: 5
+    last_updated: 2022-06-05 18:34:24.447498+00:00
+    last_published: 2022-06-05 18:34:24.447021+00:00
+- model: mars.siteconfiguration
+  pk: 1
+  fields:
+    title: 'The #1 Record Store on Mars'
+    subtitle: Since 2038
+    header_image: static/mars/uploads/pexels-cottonbro-6865917_cropped_5zk2wpS.jpg
+    about_text: "Offering the largest selection on Mars, with 11 locations across
+      the red planet.\r\n\r\nNot on Mars? No problem! For your convenience we offer
+      delivery of digital files across the interplanetary internet."
+- model: mars.artist
+  pk: 1
+  fields:
+    slug: 17-years-old-and-berlin-wall
+    name: 17 Years Old and Berlin Wall
+    link: https://17berlinwall.bandcamp.com
+    country: Japan
+- model: mars.artist
+  pk: 2
+  fields:
+    slug: miracle-sweepstates
+    name: Miracle Sweepstakes
+    link: https://miraclesweepstakes.bandcamp.com
+    country: United States
+- model: mars.artist
+  pk: 3
+  fields:
+    slug: slothbear
+    name: Slothbear
+    link: https://slothbear.bandcamp.com
+    country: United States
+- model: mars.artist
+  pk: 4
+  fields:
+    slug: khmer-rouge
+    name: KHMER ROUGE
+    link: https://khmerrouge.bandcamp.com
+    country: Denmark
+- model: mars.artist
+  pk: 5
+  fields:
+    slug: dronehands
+    name: dronehands
+    link: https://dronehands.bandcamp.com/
+    country: United States
+- model: mars.album
+  pk: 1
+  fields:
+    slug: 17-years-old-and-berlin-wall-aspect
+    artist: 1
+    title: Aspect
+    image: static/mars/uploads/albums/aspect.jpg
+    link: https://17berlinwall.bandcamp.com/album/aspect
+    album_id: '3912705967'
+- model: mars.album
+  pk: 2
+  fields:
+    slug: 17-years-old-and-berlin-wall-object
+    artist: 1
+    title: Object
+    image: static/mars/uploads/albums/a1495958417_16.jpg
+    link: https://17berlinwall.bandcamp.com/album/object
+    album_id: '917981532'
+- model: mars.album
+  pk: 3
+  fields:
+    slug: 17-years-old-and-berlin-wall-abstract
+    artist: 1
+    title: Abstract
+    image: static/mars/uploads/albums/abstract.jpg
+    link: https://17berlinwall.bandcamp.com/album/abstract
+    album_id: '1353358114'
+- model: mars.album
+  pk: 4
+  fields:
+    slug: miracle-sweepstates-rorschached
+    artist: 2
+    title: Rorschached
+    image: static/mars/uploads/albums/a0272411952_16.jpg
+    link: https://miraclesweepstakes.bandcamp.com/album/rorschached
+    album_id: '4042000787'
+- model: mars.album
+  pk: 5
+  fields:
+    slug: miracle-sweepstakes-turn-heel
+    artist: 2
+    title: Turn Heel
+    image: static/mars/uploads/albums/a1568166417_16.jpg
+    link: https://miraclesweepstakes.bandcamp.com/album/turn-heel
+    album_id: '1290704241'
+- model: mars.album
+  pk: 6
+  fields:
+    slug: slothbear-qids
+    artist: 3
+    title: Qids
+    image: static/mars/uploads/albums/a3160980166_16.jpg
+    link: https://slothbear.bandcamp.com/album/qids
+    album_id: '3070527285'
+- model: mars.album
+  pk: 7
+  fields:
+    slug: slothbear-canter-on
+    artist: 3
+    title: Canter On
+    image: static/mars/uploads/albums/a2784060154_16.jpg
+    link: https://slothbear.bandcamp.com/album/canter-on
+    album_id: '3910018943'
+- model: mars.album
+  pk: 8
+  fields:
+    slug: slothbear-best-band
+    artist: 3
+    title: Best Band
+    image: static/mars/uploads/albums/a3530990453_16.jpg
+    link: https://slothbear.bandcamp.com/album/best-band
+    album_id: '1634344504'
+- model: mars.album
+  pk: 9
+  fields:
+    slug: 17-years-old-and-berlin-wall-reflect
+    artist: 1
+    title: Reflect
+    image: static/mars/uploads/albums/a0458638620_16.jpg
+    link: https://17berlinwall.bandcamp.com/album/reflect
+    album_id: '1215297622'
+- model: mars.album
+  pk: 10
+  fields:
+    slug: khmer-rouge-my-evil-art
+    artist: 4
+    title: My Evil Art
+    image: static/mars/uploads/albums/a3251256253_16.jpg
+    link: https://khmerrouge.bandcamp.com/album/my-evil-art-2
+    album_id: '3645956670'
+- model: mars.album
+  pk: 11
+  fields:
+    slug: khmer-rouge-violence
+    artist: 4
+    title: Violence
+    image: static/mars/uploads/albums/a3615865080_16.jpg
+    link: https://khmerrouge.bandcamp.com/album/violence
+    album_id: '974817040'
+- model: mars.album
+  pk: 12
+  fields:
+    slug: khmer-rouge-the-anxiety-ep
+    artist: 4
+    title: The Anxiety EP
+    image: static/mars/uploads/albums/a1440589698_16.jpg
+    link: https://khmerrouge.bandcamp.com/album/the-anxiety-ep
+    album_id: '3169298592'
+- model: mars.album
+  pk: 13
+  fields:
+    slug: dronehands-pure-cinema
+    artist: 5
+    title: Pure Cinema
+    image: static/mars/uploads/albums/a1775046725_16.jpg
+    link: https://dronehands.bandcamp.com/album/album-pure-cinema
+    album_id: '1412903846'
+- model: mars.album
+  pk: 14
+  fields:
+    slug: dronehands-october-forever
+    artist: 5
+    title: October Forever
+    image: static/mars/uploads/albums/a3502800916_16.jpg
+    link: https://dronehands.bandcamp.com/album/album-october-forever
+    album_id: '3510295900'
+- model: mars.album
+  pk: 15
+  fields:
+    slug: dronehands-either-way-it-will-end-in-tears
+    artist: 5
+    title: Either Way It Will End In Tears
+    image: static/mars/uploads/albums/a3104886175_16.jpg
+    link: https://dronehands.bandcamp.com/album/album-either-way-it-will-end-in-tears
+    album_id: '1923935389'
+- model: mars.album
+  pk: 16
+  fields:
+    slug: miracle-sweepstakes-virtual-7
+    artist: 2
+    title: Virtual 7"
+    image: static/mars/uploads/albums/a2775775593_16.jpg
+    link: https://miraclesweepstakes.bandcamp.com/album/virtual-7
+    album_id: '672175450'
+- model: venus.siteconfiguration
+  pk: 1
+  fields:
+    title: Venus Cats
+    subtitle: The first cat cafe on Venus
+    header_image: static/venus/uploads/36333900_454229468381808_5299844022397829120.jpg
+    about_text: "When cats were first discovered on Venus, they were thought to be
+      not as cute and cuddly as their counterparts found on Earth. However, scientists
+      began to study them and soon found something amazing. As Dr. Xiaoping Wang once
+      exclaimed in the lab \"These cats are soft!\" Soft indeed.\r\n\r\nAt Venus Cats
+      we make these soft babies available to those visiting Venus. We offer the softest
+      cats at the lowest prices, guaranteed."
+- model: venus.cat
+  pk: 1
+  fields:
+    name: Snuggles
+    image: static/venus/uploads/cats/zhao-jun-PRQoDY-prHg-unsplash.jpg
+- model: venus.cat
+  pk: 2
+  fields:
+    name: Whiskers
+    image: static/venus/uploads/cats/michael-sum-LEpfefQf4rU-unsplash.jpg
+- model: venus.cat
+  pk: 3
+  fields:
+    name: Xiaoping
+    image: static/venus/uploads/cats/00-18_960x.jpg
+- model: venus.cat
+  pk: 4
+  fields:
+    name: Hana and Tama
+    image: static/venus/uploads/cats/fuu-j-nQ94b_bn08o-unsplash.jpg
+- model: venus.cat
+  pk: 5
+  fields:
+    name: Fluffy
+    image: static/venus/uploads/cats/kari-shea-eMzblc6JmXM-unsplash.jpg
+- model: venus.cat
+  pk: 6
+  fields:
+    name: Boris
+    image: static/venus/uploads/cats/milada-vigerova-BgRs4dzW4Js-unsplash.jpg
+- model: venus.cat
+  pk: 7
+  fields:
+    name: Gloria
+    image: static/venus/uploads/cats/erik-jan-leusink-IbPxGLgJiMI-unsplash.jpg
+- model: venus.cat
+  pk: 8
+  fields:
+    name: Serine
+    image: static/venus/uploads/cats/daria-averina-_867Jy8LCkI-unsplash.jpg
+- model: venus.cat
+  pk: 9
+  fields:
+    name: Mr. Joshua
+    image: static/venus/uploads/cats/river-kao-5LVbbG74ykI-unsplash_fcDTyS5.jpg
+- model: venus.cat
+  pk: 10
+  fields:
+    name: Mika
+    image: static/venus/uploads/cats/yoo-ho-E3LcqpQxtTU-unsplash.jpg
+- model: venus.cat
+  pk: 11
+  fields:
+    name: Heathcliff
+    image: static/venus/uploads/cats/tugba-fKC47FgTsVY-unsplash.jpg
+- model: venus.cat
+  pk: 12
+  fields:
+    name: Chuzzles
+    image: static/venus/uploads/cats/juan-manuel-sanchez-egk9uKaoNng-unsplash.jpg
+- model: venus.cat
+  pk: 13
+  fields:
+    name: Chibi
+    image: static/venus/uploads/cats/ricardo-l-n6ERlhyY4fs-unsplash.jpg
+- model: venus.cat
+  pk: 14
+  fields:
+    name: Sakamoto
+    image: static/venus/uploads/cats/qijin-xu-vQUXUHjyy8A-unsplash.jpg
+- model: venus.cat
+  pk: 15
+  fields:
+    name: Mima
+    image: static/venus/uploads/cats/sam-chang-5-ckjYvTZQw-unsplash.jpg

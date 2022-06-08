@@ -1,0 +1,18 @@
+{% extends "admin/base.html" %}
+
+{% block title %}{{ title }} | {{ site_title|default:site_header }}{% endblock %}
+
+{% block branding %}
+<h1 id="site-name">
+    {{ site_header }}
+</h1>
+{% endblock %}
+
+{% block sidebar %}
+    {{ block.super }}
+{% endblock %}
+
+
+{% block nav-global %}
+
+{% endblock %}

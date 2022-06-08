@@ -1,0 +1,65 @@
+{% extends './include/base.html' %}
+{% load static %}
+{% load thumbnail %}
+{% load custom %}
+{% block head %}
+  {{ block.super }}
+  <style>
+    .hero {
+      display: grid;
+      align-items: center;
+      position: relative;
+      z-index: 50;
+      color: var(--text-primary-color);
+    }
+    .hero picture, .hero img {
+      grid-area: 1/1;
+      object-fit: cover;
+      object-position: center;
+      height: 400px;
+      width: 100vw;
+      text-align: center;
+    }
+    .hero picture {
+      filter: var(--hero-filters);
+    }
+    .hero .titles {
+      grid-area: 1/1;
+      position: relative;
+      place-items: center;
+      display: grid;
+      opacity: 0.95;
+    }
+    .playlist {
+      border: thin solid #80808040;
+      border-radius: 2px;
+      width: 92.5%;
+      margin: 1rem auto 4.25vw auto;
+      display: block;
+      opacity: 0.85;
+    }
+  </style>
+{% endblock %}
+
+{% block body %}
+  {% with big_logo=True %}
+      {{ block.super }}
+  {% endwith %}
+    <div class="hero">
+      {% picture header_image.url "600x600" alt="{{header_image.alt}}" %}
+      <div class="titles">
+        <h1>
+          {{title}}
+        </h1>
+        <h2>
+          {{subtitle}}
+        </h2>
+      </div>
+    </div>
+    {% include "./include/album_grid.html" with albums=albums|shuffle|slice:'0:15' %} 
+    <iframe class="playlist"
+    src="https://open.spotify.com/embed/playlist/2vKfh01CNbKr2gayeeriSM?utm_source=generator&theme=0"
+    width="90%" height="380" frameBorder="0" allowfullscreen="" 
+    allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture">
+  </iframe>
+{% endblock %}

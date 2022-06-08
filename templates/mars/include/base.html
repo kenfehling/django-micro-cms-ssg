@@ -1,0 +1,66 @@
+{% load static %}
+{% load thumbnail %}
+{% load custom %}
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" href="{% static 'mars/style.css' %}">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" rel="stylesheet">
+    <meta property="og:image" content="{{og_image}}" />
+    {% block head %}
+        <title>Mars Records: {{title}}</title>
+        <meta property="og:image" content="{{og_image}}" />
+        <meta property="og:title" content="Mars Records: {{title}}" />
+        <meta name="description" content="{{title}}, {{subtitle}}">
+        <meta name="og:description" content="{{title}}, {{subtitle}}" />
+        <meta name="keywords" content="mars, records">
+    {% endblock %}
+  </head>
+  <body>
+    <div class="loading-screen"
+         style="
+           opacity: 0;
+           visibility: hidden;
+           animation: 0.5s ease-out disappear;
+           position: fixed;
+           top: 0;
+           left: 0;
+           width: 100vw;
+           height: 100vh;
+           background-color: var(--background-color-primary);
+           z-index: 9999;
+           display: flex;
+           justify-content: center;
+           align-items: center;
+           font-size: 1.5rem;
+           font-weight: 500;
+          "
+    >
+    </div>
+      {% block body %}
+        {% include './nav.html' with big_logo=big_logo %}
+        <main>
+      {% endblock %}
+        </main>
+    <footer>
+      <div class="text">
+        <a target="_blank" href='http://github.com/kenfehling'>
+          Django Micro CMS/SSG Starter
+        </a>
+        <br />
+        Created by
+        <a target="_blank" href='https://kenfehling.com'>Ken Fehling</a>
+      </div>
+      <div class="social">
+        <i class="fa-brands fa-github"></i>
+        <a target="_blank" href="https://open.spotify.com/playlist/2vKfh01CNbKr2gayeeriSM?si=fca77a0c43c04649">
+          <i class="fa-brands fa-spotify" style="color: #1CCC5B"></i>
+        </a>
+      </div>
+  </footer>
+  </html>
+</html>

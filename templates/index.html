@@ -1,0 +1,144 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Django Micro CMS/SSG</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu+Mono&display=block" rel="stylesheet"> 
+    <style>
+        :root {
+            --page-bg-color: #00A;
+            --page-fg-color: #5FF;
+            --content-bg-color: #AAA;
+            --content-fg-color: #000;
+            --link-color: var(--content-fg-color);
+            --link-hover-bg-color: var(--page-bg-color);
+            --link-hover-fg-color: #FFF;
+            --shadow-size: 1rem;
+        }
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: 'Ubuntu Mono', monospace;
+            color: var(--page-fg-color);
+            background-color: var(--page-bg-color);
+            display: flex;
+            font-weight: 600;
+        }
+        h1, h2 {
+            font-size: 1em;
+            font-weight: 600;
+        }
+        h1 {
+            padding: 0.5rem 0 0.5rem 1px;
+            left: 0.67rem;
+            right: 0.67rem;
+            box-sizing: border-box;
+            position: absolute;
+            border-bottom: 2px solid var(--page-fg-color);
+        }
+        h2 {
+            margin: 0;
+        }
+        main {
+            padding: 2rem 2.25rem;
+            max-height: calc(100% - 8rem);
+            box-sizing: border-box;
+            margin: auto;
+            color: var(--content-fg-color);
+            background-color: var(--content-bg-color);
+            box-shadow: var(--shadow-size) var(--shadow-size) var(--shadow-size) #000;
+            overflow-y: scroll;
+        }
+        a { 
+            color: var(--link-color);
+            text-decoration: none;
+        }
+        a:hover, a:focus, a:active {
+            color: var(--link-hover-fg-color);
+            background-color: var(--link-hover-bg-color);
+        }
+        h2 {
+            padding-bottom: 0;
+        }
+        ul {
+            list-style: none;
+        }
+        li {
+            margin-bottom: 0.5rem;
+            padding: 0 0.5rem;
+        }
+        li a {
+            padding: 0.125rem 0.25rem;
+        }
+        li a:after {
+            content: '--->';
+            margin-left: 0.75rem;
+        }
+        ul:last-of-type, li:last-of-type {
+            margin-bottom: 1px;
+        }
+        @media screen and (max-width: 319px) {
+            body { 
+                font-size: 10px;
+            }
+        }
+        @media screen and (max-width: 320px) {
+            body { 
+                font-size: 11px;
+            }
+        }
+        @media screen and (min-width: 360px) {
+            body { 
+                font-size: 12px;
+            }
+        }
+        @media screen and (min-width: 400px) {
+            body { 
+                font-size: 13px;
+            }
+        }
+        @media screen and (min-width: 440px) {
+            body { 
+                font-size: 14px;
+            }
+        }
+        @media screen and (min-width: 480px) {
+            body { 
+                font-size: 15px;
+            }
+        }
+        @media screen and (min-width: 520px) {
+            body { 
+                font-size: 16px;
+            }
+        }
+        @media screen and (min-width: 560px) {
+            body { 
+                font-size: 17px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Django Micro CMS/SSG v0.1.0</h1>
+    <main>
+        <h2>Configuration</h2>
+        <ul><li><a href='admin'>Enter admin console</a></li></ul>
+        <h2>Sites</h2>
+        <ul>
+            {% for site in sites %}
+                <li><a href='{{site}}'>{{ site }}</a></li>
+            {% endfor %}
+        </ul>
+        <h2>Resources</h2>
+        <ul>
+            <li><a target="_blank" href='http://github.com/kenfehling'>Git repository</a></li>
+        </ul>
+    </main>
+</body>
+</html>

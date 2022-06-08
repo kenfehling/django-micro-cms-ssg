@@ -1,0 +1,16 @@
+{% extends './include/base.html' %}
+{% load static %}
+{% load thumbnail %}
+{% load custom %}
+{% block head %}
+    <title>Mars Records | Shop</title>
+    <meta property="og:title" content="Mars Records | Shop" />
+    <meta name="description" content="Albums we have for sale">
+    <meta name="og:description" content="Albums we have for sale" />
+    <meta name="keywords" content="mars, records, albums">
+{% endblock %}
+
+{% block body %}
+    {{ block.super }}
+    {% include "./include/album_grid.html" with albums=albums|shuffle %} 
+{% endblock %}

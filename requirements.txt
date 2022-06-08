@@ -1,0 +1,9 @@
+django
+django-distill
+django-cleanup
+django-solo
+sorl-thumbnail
+Pillow
+markdown
+more_itertools
+pyyaml

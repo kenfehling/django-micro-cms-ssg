@@ -1,0 +1,221 @@
+:root {
+    --background-color-primary: #111;
+    --background-color-secondary: #26282B;
+    --card-bg-color: #181818;
+    --card-border: thin solid #111;
+    --text-primary-color: #eee;
+    --nav-fg-color: #ccc;
+    --link-color: #eca44c;
+    --link-hover-color: #ef7919;
+    --card-shadow: none;
+    --hero-filters: contrast(80%) brightness(50%) saturate(80%);
+  }
+
+  :root.light-theme {
+    --background-color-primary: #FB7;
+    --background-color-secondary: #FDB;
+    --card-bg-color: #FFFFFF80;
+    --card-border: none;
+    --text-primary-color: #222;
+    --nav-fg-color: #222;
+    --link-color: #714d00;
+    --link-hover-color: #d17d00;
+    --card-shadow: 0 0 6px rgba(0, 0, 0, 0.5);
+    --hero-filters: contrast(50%) brightness(140%) saturate(70%);
+  }
+
+  html, body {
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 18px;
+    background-color: var(--background-color-primary);
+    color: var(--text-primary-color);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+
+  main {
+    background-color: var(--background-color-secondary);
+    padding-top: 55px;
+    box-sizing: border-box;
+    flex-grow: 1;
+  }
+
+  .large-grid, .small-grid, footer {
+    font-size: small; 
+    font-family: Arial, Helvetica, sans-serif;
+  }
+
+  footer {
+    padding: 20px 20px 16px 20px;
+    line-height: 1.45rem;
+    background-color: var(--background-color-primary);
+  }
+
+  footer a, footer a:visited {
+    color: inherit;
+  }
+
+  .page-container {
+    padding: 20px;
+    margin: 0 auto;
+    box-sizing: border-box;
+  }
+
+  h1 {
+    font-size: 1.75rem;
+    font-weight: 500;
+  }
+
+  h2 {
+    font-size: 1.25rem;
+    font-weight: 500;
+  }
+
+  h1, h2 {
+    margin: 0;
+  }
+
+  a, a:visited {
+    color: var(--link-color);
+  }
+
+  a:hover {
+    color: var(--link-hover-color);
+  }
+
+  .large-grid a, .list a, .small-grid a {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .large-grid > *, .small-grid > * {
+    display: block;
+  }
+
+  .list > * {
+    display: flex;
+  }
+
+  .list img {
+    max-width: 120px;
+  }
+
+  .light-on-hover {
+    opacity: 0.8;
+    transition: transform 0.5s ease-out;
+    transition-property: opacity;
+  }
+
+  .light-on-hover:hover, .light-on-hover:active, .light-on-hover:focus {
+    opacity: 1;
+    transition: transform 0.3s ease-out;
+    transition-property: opacity;
+  }
+
+  @keyframes disappear {
+    0% {
+      opacity: 1;
+      visibility: visible;
+    }
+    33% {
+      opacity: 1;
+      visibility: visible;
+    }
+    100% {
+      opacity: 0;
+      visibility: hidden;
+    }
+  }
+
+  .large-grid, .small-grid {
+    display: flex;
+    flex-wrap: wrap; 
+    width: 100%;
+    padding: 2%;
+    box-sizing: border-box;
+    margin-top: 1rem;
+  }
+
+  .large-grid > *, .small-grid > * {
+      box-sizing: border-box;
+      padding: 3%;
+  }
+
+  .large-grid > * img, .small-grid > * img {
+      border-radius: 5px;
+      width: 100%;
+      box-shadow: var(--card-shadow);
+  }
+
+  .card {
+      background-color: var(--card-bg-color);
+      border: var(--card-border);
+      border-radius: 5px;
+      padding: 16px calc(16px + 1em);
+      margin: 20px;
+      box-shadow: var(--card-shadow);
+  }
+
+  @media screen and (max-width: 519px) {
+    .large-grid > *, .small-grid > * {
+      width: 50%;
+    }
+  }
+
+  @media screen and (min-width: 520px) {
+    .large-grid > *, .small-grid > * {
+      width: 33.3333%;
+    }
+  }
+
+  @media screen and (min-width: 760px) {
+    .large-grid > * {
+      width: 25%;
+    }
+  }
+
+  @media screen and (min-width: 960px) {
+    .large-grid > * {
+      width: 20%;
+    }
+  }
+
+@media screen and (max-width: 449px) {
+    footer .text, footer .social {
+        text-align: center;
+    }
+
+    footer .text {
+      line-height: 1.6rem;
+      margin-bottom: 0.5rem;
+    }
+
+    footer i {
+      font-size: 2.5rem;
+      margin-left: 0.8rem;
+    }
+}
+
+@media screen and (min-width: 450px) {
+    footer .text {
+      line-height: 1.6rem;
+        text-align: left;
+        float: left;
+    }
+    
+    footer .social {
+        text-align: right;
+        float: right;
+    }
+
+    footer i {
+      font-size: 3rem;
+      margin-left: 0.8rem;
+    }
+}

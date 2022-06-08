@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="50"
+   height="50"
+   id="svg34864"
+   sodipodi:version="0.32"
+   inkscape:version="1.1.2 (0a00cf5339, 2022-02-04)"
+   version="1.0"
+   sodipodi:docname="venus_logo.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <defs
+     id="defs34866" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     gridtolerance="10000"
+     guidetolerance="10"
+     objecttolerance="10"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="5.6"
+     inkscape:cx="33.660714"
+     inkscape:cy="25.089286"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     inkscape:window-width="1282"
+     inkscape:window-height="656"
+     inkscape:window-x="95"
+     inkscape:window-y="102"
+     inkscape:pagecheckerboard="0"
+     showgrid="false"
+     inkscape:window-maximized="0" />
+  <metadata
+     id="metadata34869">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-348.7552,-478.0905)">
+    <g
+       id="g63"
+       transform="matrix(0.07655203,0,0,0.07655203,352.50612,481.35472)">
+      <path
+         d="m 399.686,108.48 c -0.954,-3.094 -3.28,-5.456 -6.22,-6.278 C 383.364,99.348 374.9,92.04 370.244,82.119 c -0.794,-1.674 -1.65,-3.29 -2.601,-4.866 -4.041,-6.689 -10.037,-11.731 -17.064,-14.42 -6.529,-2.497 -11.068,-6.278 -15.285,-9.976 -0.453,-8.863 -2.294,-33.415 -9.322,-50.212 -0.55,-1.317 -1.713,-2.27 -3.086,-2.555 -1.408,-0.291 -2.846,0.139 -3.879,1.124 -6.836,6.672 -19.793,22.122 -25.838,46.649 -26.691,12.207 -34.69,38.237 -34.69,56.239 0,5.59 1.16,10.882 2.828,15.963 -13.332,6.22 -26.082,19.46 -38.084,40.669 l -61.662,74.175 0.033,0.015 c -23.381,21.372 -39.021,59.623 -39.021,103.404 0,9.139 0.81,17.466 2.083,25.28 -0.272,0.386 -0.69,0.615 -0.936,1.034 -20.146,33.32 -17.886,29.647 -22.619,39.806 -9.44,25.241 -4.175,51.998 10.583,67.34 20.15,20.949 41.785,25.031 49.638,24.561 15.998,0.271 13.009,0.273 98.143,-28.422 5.637,-1.9 8.854,-7.901 7.236,-13.682 -1.645,-5.975 -7.869,-9.466 -13.844,-7.795 -85.793,24.045 -83.326,24.738 -97.273,21.055 -1.197,-0.411 -45.578,-20.399 -15.755,-64.13 14.3,21.183 36.196,31.894 61.14,32.768 v 0.29 h 90.295 c 7.124,0 12.924,-4.76 12.924,-10.631 0,-9.324 -5.072,-18.162 -13.815,-24.068 -4.069,-2.763 -8.788,-4.677 -13.749,-5.835 6.383,-11.108 10.795,-24.6 12.637,-40.53 l 24.559,76.741 c 0.888,2.588 3.33,4.324 6.062,4.324 h 42.058 c 8.207,0 14.865,-4.768 14.865,-10.624 0,-9.332 -5.83,-18.155 -15.898,-24.076 -5.93,-3.498 -13.007,-5.591 -20.426,-6.489 l -10.645,-39.49 -5.172,-87.634 c 20.359,-21.441 33.024,-45.532 24.545,-90.848 -3.945,-20.971 10.631,-30.634 13.346,-32.243 2.456,-0.848 4.91,-1.787 7.367,-2.529 3.814,-1.154 7.662,-2.795 11.325,-5.281 2.218,-1.514 10.132,-7.225 16.79,-19.803 1.484,-2.822 2.569,-5.858 1.649,-8.937 z"
+         id="path10" />
+    </g>
+    <circle
+       cx="373.75519"
+       cy="498.37827"
+       stroke-width="2.96734"
+       fill="none"
+       stroke="#000000"
+       r="17.804106"
+       id="circle1644" />
+    <rect
+       style="fill:#000000;stroke-width:0.862376"
+       id="rect572"
+       width="2.5"
+       height="11.638141"
+       x="372.50519"
+       y="515.45233"
+       ry="1.2806053" />
+    <rect
+       style="fill:#000000;stroke-width:0.862376"
+       id="rect572-6"
+       width="11.638141"
+       height="2.5"
+       x="367.93613"
+       y="520.59052"
+       rx="1.2806053" />
+  </g>
+</svg>

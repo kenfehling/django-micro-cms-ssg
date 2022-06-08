@@ -1,0 +1,50 @@
+{% extends './include/base.html' %}
+{% load static %}
+{% load thumbnail %}
+{% load custom %}
+{% block head %}
+  <title>{{artist.name}}</title>
+  <meta name="description" content="{{ artist.name }}">
+  <style>
+    .artist-info {
+      text-align: right;
+      padding-right: 5%;
+    }
+    .page-container {
+      max-width: 800px;
+    }
+
+    /* @media screen and (max-width: 479px) {
+      .artist-info {
+        padding-left: 10%;
+      }
+    }
+
+    @media screen and (min-width: 480px) {
+      .artist-info {
+        padding-left: 15%;
+      }
+    } */
+
+  </style>
+{% endblock %}
+
+{% block body %}
+  {{ block.super }}
+    <div class="page-container">
+      <div class="artist-info">
+        <h1>{{artist.name}}</h1>
+        <div>
+          <a href="{{artist.link}}" target="_blank">
+            Visit bandcamp page
+          </a>
+          <div style="margin-top: 1rem">
+            <div>
+              Origin: {{artist.country}}, Earth
+            </div>
+          </div>
+        </div>
+      </div>
+      {% include "./include/album_grid.html" with albums=artist.albums.all class='small-grid' %}
+    </div>
+{% endblock %}

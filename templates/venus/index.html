@@ -1,0 +1,62 @@
+{% extends "./include/base.html" %}
+{% load static %}
+{% load thumbnail %}
+{% load custom %}
+{% block head %}
+  {{ block.super }}
+  <style>
+    .hero {
+      display: grid;
+      align-items: center;
+      position: relative;
+      z-index: 50;
+      margin-bottom: 1rem;
+    }
+    .hero picture, .hero img {
+      grid-area: 1/1;
+      object-fit: cover;
+      object-position: top left;
+      width: 100%;
+      text-align: center;
+    }
+    .hero picture {
+      filter: contrast(90%) saturate(50%);
+      opacity: 0.67;
+    }
+    .hero .titles {
+      grid-area: 1/1;
+      position: relative;
+      place-items: center;
+      display: grid;
+      opacity: 0.95;
+      color: #000;
+    }
+    .hero h1 {
+      font-family: 'Dancing Script', cursive;
+      font-weight: 700;
+      font-size: 3.5rem;
+      margin: 0;
+    }
+    .hero h2 {
+      font-weight: 400;
+      font-size: 1.25rem;
+      margin: 0;
+    }
+
+  </style>
+{% endblock %}
+
+{% block body %}
+  <div class="hero">
+    {% picture header_image.url "600x600" alt="{{header_image.alt}}" %}
+    <div class="titles">
+      <h1>
+        {{title}}
+      </h1>
+      <h2>
+        {{subtitle}}
+      </h2>
+    </div>
+  </div>
+    {% include "./include/cat_grid.html" with cats=cats|shuffle|slice:'0:6' %}
+{% endblock %}

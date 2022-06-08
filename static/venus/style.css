@@ -1,0 +1,128 @@
+:root  {
+    --background-color-primary: #e4cab0;
+    --background-color-secondary: #e9d0b8;
+    --text-primary-color: #111;
+    --nav-bg-color: #ddbb99;
+    --nav-fg-color: #000;
+    --link-color: #714d00;
+    --link-hover-color: #95714d;
+    --mobile-nav-hover-color: #c4996ecc;
+    --card-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    color: var(--text-primary-color);
+    background-color: var(--background-color-primary);
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+nav, main {
+    max-width: 960px;
+    margin: auto;
+}
+
+header {
+    width: 100%;
+}
+
+main {
+    width: 100%;
+}
+
+footer {
+    padding: 20px 20px 16px 20px;
+    margin-top: 0.25rem;
+    font-size: small;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.45rem;
+    background-color: var(--nav-bg-color);
+}
+
+footer a, footer a:visited {
+    color: inherit;
+}
+
+footer i {
+    font-size: 2.5rem;
+    margin-left: 10px;
+}
+
+.card {
+    background-color: var(--background-color-secondary);
+    border-radius: 5px;
+    padding: 16px calc(16px + 1em);
+    margin: 20px;
+    box-shadow: var(--card-shadow);
+}
+
+.grid {
+    display: flex;
+    flex-wrap: wrap; 
+    width: 100%;
+    padding: 2%;
+    box-sizing: border-box;
+  }
+
+.grid > * {
+    box-sizing: border-box;
+    padding: 2%;
+}
+
+.grid > * img {
+    border: thin solid #80808033;
+    width: 100%;
+}
+
+@media screen and (max-width: 519px) {
+    .grid > * {
+        width: 50%;
+    }
+}
+
+@media screen and (min-width: 520px) {
+    .grid > * {
+        width: 33%;
+    }
+}
+
+@media screen and (max-width: 449px) {
+    footer .text, footer .social {
+        text-align: center;
+    }
+
+    footer .text {
+      line-height: 1.6rem;
+      margin-bottom: 0.5rem;
+    }
+
+    footer i {
+      font-size: 2.5rem;
+      margin-left: 0.8rem;
+    }
+}
+
+@media screen and (min-width: 450px) {
+    footer .text {
+      line-height: 1.6rem;
+        text-align: left;
+        float: left;
+    }
+    
+    footer .social {
+        text-align: right;
+        float: right;
+    }
+
+    footer i {
+      font-size: 3rem;
+      margin-left: 0.8rem;
+    }
+}

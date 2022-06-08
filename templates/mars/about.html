@@ -1,0 +1,54 @@
+{% extends "./include/base.html" %}
+{% block head %}
+  {{ block.super }}
+  <style>
+    @media screen and (max-width: 719px) {
+      .page-container {
+        display: block;
+      }
+    }
+
+    @media screen and (min-width: 720px) {
+      main {
+        display: flex;
+      }
+      .page-container {
+        display: flex;
+        max-width: 1080px;
+        margin: auto;
+      }
+      .page-container .card {
+        width: 50%;
+      }
+    }
+  </style>
+{% endblock %}
+{% block body %}
+    {{ block.super }}
+    <div class="page-container">
+        <div class="card">
+            {{about_text}}
+        </div>
+        <div class="card">
+          <p>
+            Created by <a target="_blank" href='https://kenfehling.com'>Ken Fehling</a>
+            as a proof of concept for delivering statically generated websites
+            and providing a simple CMS / back office with limited scope.
+          </p>
+          <p>
+            The system is based on
+            <a target="_blank" href="https://www.djangoproject.com/">Django</a>
+            and builds on top of
+            <a target="_blank" href="https://docs.djangoproject.com/en/4.0/ref/contrib/admin/">Django Admin</a>.
+            It uses
+            <a target="_blank" href="https://github.com/meeb/django-distill">django-distill</a>
+            as a Static Site Generator (SSG).
+          </p>
+          <p>
+            The websites use plain HTML/CSS/JS and Django templates.
+            Some components are built with
+            <a target="_blank" href="https://github.com/vuejs/petite-vue">Petite Vue</a>.
+          </p>
+        </div>
+    </div>
+{% endblock %}

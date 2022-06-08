@@ -1,0 +1,18 @@
+{% load custom %}
+<div class="list">
+    {% for album in albums %}
+        <a href="{% url 'mars:album' album.slug %}" style="margin-bottom: 2rem">
+            {% picture album.image.url "240x240" crop="center" alt="{{album.title}}" className="light-on-hover" %}
+            <div style="margin: 0 20px; position: relative; width: 100%; height: 120px;">
+                <div style="position: absolute;
+                width: 100%;
+                top: 50%;
+                -ms-transform: translateY(-50%);
+                transform: translateY(-50%);">
+                    <div style="margin: 0 0 0.25rem 0;">{{album.artist}}</div>
+                    <div style="opacity: 0.67;">{{album.title}}</div>
+                </div>
+            </div>
+        </a>
+    {% endfor %}
+</div>

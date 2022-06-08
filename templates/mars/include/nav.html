@@ -1,0 +1,312 @@
+{% load static %}
+{% load thumbnail %}
+{% load custom %}
+<script type="module">
+    import { createApp } from 'https://unpkg.com/petite-vue?module'
+    const maxLogoSize = parseInt('{% if big_logo %} 200 {% else %} 80 {% endif %}');
+    const minLogoSize = 80;
+    const minAtScrollPosition = 300;
+    const logoTransition = '1s ease 0s';
+
+    const calcLogoSize = (y) => {
+      if (y >= minAtScrollPosition) {
+        return minLogoSize;
+      } else {
+        return (maxLogoSize - minLogoSize) * 
+          (1 - y / minAtScrollPosition) + minLogoSize;
+      }
+    };
+
+    const getLogoStyle = (y) => {
+      const size = calcLogoSize(y);
+      return 'width: ' + size + 'px; height: ' + size + 'px';
+    }
+
+    createApp({
+        $delimiters: ["[[", "]]"],
+      // exposed to all expressions
+      _scrollY: 0,
+      logoStyle: getLogoStyle(window.scrollY),
+      isBurgerMenuActive: false,
+      // getters
+      get scrollY() {
+        return this._scrollY
+      },
+      // methods
+      setTheme(theme) {
+        localStorage.setItem("user-theme", theme);
+        this.userTheme = theme;
+        document.documentElement.className = theme;
+      },
+      getTheme() {
+        return localStorage.getItem("user-theme");
+      },
+      toggleTheme() {
+        const activeTheme = localStorage.getItem("user-theme");
+        if (activeTheme === "light-theme") {
+          this.setTheme("dark-theme");
+        } else {
+          this.setTheme("light-theme");
+        }
+      },
+      getMediaPreference() {
+        const hasDarkPreference = window.matchMedia(
+          "(prefers-color-scheme: dark)"
+        ).matches;
+        if (hasDarkPreference) {
+          return "dark-theme";
+        } else {
+          return "light-theme";
+        }
+      },
+      setScrollY(y) {
+        this._scrollY = y
+      },
+      toggleBurger() {
+          this.isBurgerMenuActive = !this.isBurgerMenuActive;
+      },
+      updateScrollY() {
+        this.setScrollY(window.scrollY);
+        this.logoStyle = getLogoStyle(window.scrollY);
+      },
+      init() {
+        const initUserTheme = this.getTheme() || this.getMediaPreference();
+        this.setTheme(initUserTheme);
+        this.updateScrollY();
+        window.addEventListener('scroll', this.updateScrollY);
+      }
+    }).mount()
+
+  </script>
+  
+  <header 
+        v-scope v-effect="init()" 
+        :class="{['navbar']: true, ['open-drawer']: isBurgerMenuActive}">
+    <nav>
+        <a class="logo" style="display: none" :style="logoStyle" href="{% url 'mars:home' %}">
+            {% picture "static/mars/img/mars.png" "400x400" alt="Logo" style="width: 100%; height: 100%" %}
+        </a>
+        <div class="desktop-nav">
+          <ul>
+            <li><a href="{% url 'mars:home' %}">Home</a></li>
+            <li><a href="{% url 'mars:shop' %}">Shop</a></li>
+            <li><a href="{% url 'mars:about' %}">About</a></li>
+          </ul>
+        </div>
+        <div class="buttons">
+          <button class="icon-button" aria-label="Toggle Dark Mode" :onclick="toggleTheme">
+            <i class="fa-solid fa-circle-half-stroke"></i>
+          </button>
+          <button class="burger" aria-label="Main Menu" :onclick="toggleBurger">
+            <svg viewBox="0 0 100 100">
+                <path class="line line1" d="M 20,29.000046 H 80.000231 C 80.000231,29.000046 94.498839,28.817352 94.532987,66.711331 94.543142,77.980673 90.966081,81.670246 85.259173,81.668997 79.552261,81.667751 75.000211,74.999942 75.000211,74.999942 L 25.000021,25.000058" />
+                <path class="line line2" d="M 20,50 H 80" />
+                <path class="line line3" d="M 20,70.999954 H 80.000231 C 80.000231,70.999954 94.498839,71.182648 94.532987,33.288669 94.543142,22.019327 90.966081,18.329754 85.259173,18.331003 79.552261,18.332249 75.000211,25.000058 75.000211,25.000058 L 25.000021,74.999942" />
+            </svg>
+          </button>
+        </div>
+        <div class="mobile-nav">
+          <ul>
+            <li><a href="{% url 'mars:home' %}">Home</a></li>
+            <li><a href="{% url 'mars:shop' %}">Shop</a></li>
+            <li><a href="{% url 'mars:about' %}">About</a></li>
+          </ul>
+        </div>
+    </nav>
+    <div class="drawer-overlay" :onclick="toggleBurger"></div>
+  </header>
+
+  <style scoped>
+    .navbar nav {
+      height: 55px;
+      width: 100vw;
+      padding: 0 0.5rem;
+      box-sizing: border-box;
+      position: fixed;
+      z-index: 1000;
+      top: 0;
+      color: var(--nav-fg-color);
+      background-color: var(--background-color-primary);
+    }
+    .navbar .logo {
+      padding: min(1rem, 2vw) 3vw;
+      z-index: 1000;
+      position: absolute;
+    }
+    .mobile-nav {
+        position: fixed;
+        z-index: 1500;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 240px;
+        color: var(--nav-fg-color);
+        background-color: var(--background-color-primary);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        transition: transform 0.4s ease-out;
+        transition-property: transform, opacity;
+        transform: translateY(-100%);
+        display: flex;
+        font-size: 1.5rem;
+        font-weight: 600;
+        border: thin solid #80808040;
+        border-top-width: 0;
+        box-sizing: border-box;
+    }
+
+    .open-drawer .mobile-nav {
+        transform: translateY(0);
+    }
+
+    li a, li a:visited {
+      color: var(--nav-fg-color);
+      text-decoration: none;
+    }
+
+    li:hover, li:focus, li:active, li a:hover, li a:focus, li a:active {
+      color: var(--link-hover-color);
+    }
+
+    .desktop-nav {
+      margin-right: 4.25rem;
+      float: right;
+    }
+
+    .desktop-nav ul {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        flex-direction: row;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    .desktop-nav li {
+        line-height: 55px;
+        margin: 0 0.5rem;
+        padding: 0 0.5rem;
+        font-weight: 500;
+        box-sizing: border-box;
+    }
+
+    .mobile-nav ul {
+        list-style: disclosure-closed;
+        padding-left: 2.5rem;
+    }
+
+    .navbar.is-default {
+        grid-template-columns: auto 1fr;
+        padding: 0 5rem 1.5rem 5.25rem;
+    }
+
+    .buttons {
+      position: absolute;
+      right: 0.75rem;
+      display: flex;
+    }
+
+    .icon-button, .burger {
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+    }
+
+    .icon-button {
+      width: 50px;
+      height: 54px;
+      font-size: 1.45rem;
+      padding-bottom: 1px;
+      color: var(--nav-fg-color);
+    }
+
+    .burger {
+        width: 47px;
+        height: 55px;
+        padding: 0 4px;
+        display: flex;
+        align-items: center;
+        z-index: 9999;
+    }
+
+    .burger svg {
+        width: 100%;
+        height: 100%;
+        stroke: var(--nav-fg-color);
+    }
+
+    .line { 
+        fill: none;
+        stroke-width: 4;
+        transition: stroke-dasharray 600ms cubic-bezier(0.4, 0, 0.2, 1),
+        stroke-dashoffset 600ms cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .line1 {
+        stroke-dasharray: 60 207;
+    }
+    .line2 {
+        stroke-dasharray: 60 60;
+    }
+    .line3 {
+        stroke-dasharray: 60 207;
+    }
+    .open-drawer .line1 {
+        stroke-dasharray: 90 207;
+        stroke-dashoffset: -134;
+    }
+    .open-drawer .line2 {
+        stroke-dasharray: 1 60;
+        stroke-dashoffset: -30;
+    }
+    .open-drawer .line3 {
+        stroke-dasharray: 90 207;
+        stroke-dashoffset: -134;
+    }
+    
+@media screen and (max-width: 599px) {
+  .burger {
+    display: flex;
+  }
+  .desktop-nav {
+    display: none;
+  }
+      .drawer-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 200;
+        display: none;
+    }
+
+    .open-drawer .drawer-overlay {
+        display: block;
+    }
+}
+
+@media screen and (min-width: 600px) {
+  .burger {
+    display: none;
+  }
+  .desktop-nav {
+    display: block;
+  }
+  .mobile-nav {
+    display: none;
+  }
+  .buttons {
+    right: 1.5rem;
+  }
+}
+
+@media (hover: hover) {
+  .burger:hover svg {
+    stroke: var(--link-hover-color);
+  }
+}
+
+</style>
