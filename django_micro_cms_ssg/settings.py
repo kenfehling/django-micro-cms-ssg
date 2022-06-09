@@ -57,7 +57,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'ken_cms.urls'
+ROOT_URLCONF = 'django_micro_cms_ssg.urls'
 
 TEMPLATES = [
     {
@@ -78,7 +78,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'ken_cms.wsgi.application'
+WSGI_APPLICATION = 'django_micro_cms_ssg.wsgi.application'
 
 
 # Database
