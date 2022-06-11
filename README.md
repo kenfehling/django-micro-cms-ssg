@@ -1,10 +1,12 @@
 # Django Micro CMS/SSG Starter #
 Starter project / proof of concept for a simple, or "micro"
-Content Management System (CMS) based on Django Admin,
+Content Management System (CMS) 
 combined with a Static Site Generator (SSG).
 
 ## Features ##
-* Simple back office built on top of Django Admin, with some enhancements
+* Simple back office built on top of
+[Django Admin](https://docs.djangoproject.com/en/4.0/ref/contrib/admin/)
+with some enhancements
 * Static site generation using 
 [django-distill](https://github.com/meeb/django-distill)
 * Multi-site support
