@@ -9,7 +9,7 @@ combined with a Static Site Generator (SSG).
 [django-distill](https://github.com/meeb/django-distill)
 * Multi-site support
 * Automatically manages role groups and permissions for individual sites
-* Automatically pushs generated sites to Git on updates
+* Automatically pushes generated sites to Git on updates
 * Image optimization
 
 ## Philisophy ##
@@ -25,8 +25,8 @@ It's based on the following premises:
 * Overloading nontechnical users with too many options makes them
 averse to doing any updates at all.
 * A monolithic system where the CMS and SSG are unified has
-less cognitive overhead than a system where they are separate parts
-connected by GraphQL or some other API.
+less cognitive overhead for developers than a system where they are
+separate parts connected by GraphQL or some other API.
 * The Python and Django ecosystems are powerful enough to rival the likes
 of popular SSGs like Gatsby and NextJS.
 * Projects like
