@@ -29,8 +29,8 @@ averse to doing any updates at all.
 * A monolithic system where the CMS and SSG are unified has
 less cognitive overhead for developers than a system where they are
 separate parts connected by GraphQL or some other API.
-* The Python and Django ecosystems are powerful enough to rival the likes
-of popular SSGs like Gatsby and NextJS.
+* The Python/Django ecosystem is powerful enough to rival
+popular SSGs like Gatsby and NextJS.
 * Projects like
 [petite-vue](https://github.com/vuejs/petite-vue) make it natural to
 sprinkle reactive components onto a server-rendered
@@ -60,12 +60,12 @@ In the Admin UI you can set the Git repo and the root URL for build.
 Sites are added to this menu automatically when added to the
 SITES list in config.py
 
-![site-setup](./docs/site-setup.png)
+![Site setup](./docs/site-setup.png)
 
 ### Publishing sites ###
 If there is a Git repository configured for the site it will automatically
 push after some number of minutes since the last update made.
-With the Git repo set up, then it's the usual process of deploying to
+After that it's' the usual process of deploying to
 GitHub Pages, Netlify, Vercel, or wherever else you'd host a static site.
 
 The Git push assumes you're using SSH and you have your
@@ -115,20 +115,28 @@ this image size will be used if the viewport is at least this wide.
         <tr>
           <td>alt</td>
           <td align="center">✓</td>
-          <td>Identical to the img tag alt attribute</td>
+          <td><code>img</code> tag <code>alt</code> attribute</td>
         </tr>
         <tr>
           <td>style</td>
           <td align="center"></td>
-          <td>Identical to HTML style attribute</td>
+          <td>HTML <code>style</code> attribute</td>
         </tr>
         <tr>
           <td>class</td>
           <td align="center"></td>
-          <td>Identical to HTML class attribute</td>
+          <td>HTML <code>class</code> attribute</td>
         </tr>
     </tbody>
 </table>
 
 Also any [options for sorl-thumbnail's thumbnail tag](https://sorl-thumbnail.readthedocs.io/en/latest/template.html#options)
 like `crop`, `quality`, etc. are passed through.
+
+<style>
+  img[alt="Site setup"] {
+    width: 100%;
+    max-width: 600px;
+    opacity: 0.9;
+  }
+</style>
