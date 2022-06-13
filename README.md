@@ -60,7 +60,9 @@ In the Admin UI you can set the Git repo and the root URL for build.
 Sites are added to this menu automatically when added to the
 SITES list in config.py
 
-![Site setup](./docs/site-setup.png)
+<img src='./docs/site-setup.png'
+     alt='Site setup screenshot'
+     style='width:100%; max-width: 500px'>
 
 ### Publishing sites ###
 If there is a Git repository configured for the site it will automatically
@@ -95,7 +97,7 @@ The tag is built on top of
 {% endimage %}
 ```
 
-Any number of sizes can be passed, with the format
+Any number of sizes can be passed, with the format:
 ```
 {% size <w>x<h> <min-width> %}
 ```
