@@ -50,7 +50,7 @@ bash docker/run.sh
 ### Without Docker ###
 This script will install all dependencies and setup the database.
 
-Note: It doesn't create a virtualenv so you should do that if you want.
+Note: It doesn't create a virtual environment so you should do that if you want.
 ```
 bash scripts/init.sh
 ```
@@ -65,7 +65,7 @@ SITES list in config.py
 ### Publishing sites ###
 If there is a Git repository configured for the site it will automatically
 push after some number of minutes since the last update made.
-After that it's' the usual process of deploying to
+After that it's the usual process of deploying to
 GitHub Pages, Netlify, Vercel, or wherever else you'd host a static site.
 
 The Git push assumes you're using SSH and you have your
