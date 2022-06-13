@@ -97,9 +97,11 @@ class ImageNode(template.Node):
                 options[key] = value
         
         if 'alt' not in options:
-            raise "alt is required"
+            raise Exception("alt is required")
 
         sizes = [node for node in self.nodelist if isinstance(node, SizeNode)]
+        if len(sizes) == 0:
+            raise Exception("At least one size is required")
 
         alt = options.get('alt', '')
         style = options.get('style', '')
