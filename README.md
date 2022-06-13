@@ -115,7 +115,7 @@ this image size will be used if the viewport is at least this wide.
         <tr>
           <td>alt</td>
           <td align="center">✓</td>
-          <td><code>img</code> tag <code>alt</code> attribute</td>
+          <td><code>img</code> tag <code>alt attribute</td>
         </tr>
         <tr>
           <td>style</td>
@@ -132,11 +132,3 @@ this image size will be used if the viewport is at least this wide.
 
 Also any [options for sorl-thumbnail's thumbnail tag](https://sorl-thumbnail.readthedocs.io/en/latest/template.html#options)
 like `crop`, `quality`, etc. are passed through.
-
-<style>
-  img[alt="Site setup"] {
-    width: 100%;
-    max-width: 600px;
-    opacity: 0.9;
-  }
-</style>
