@@ -1,6 +1,6 @@
 {% load static %}
 {% load thumbnail %}
-{% load custom %}
+{% load dmcs %}
 <script type="module">
     import { createApp } from 'https://unpkg.com/petite-vue?module'
     const maxLogoSize = parseInt('{% if big_logo %} 200 {% else %} 80 {% endif %}');
@@ -84,7 +84,10 @@
         :class="{['navbar']: true, ['open-drawer']: isBurgerMenuActive}">
     <nav>
         <a class="logo" style="display: none" :style="logoStyle" href="{% url 'mars:home' %}">
-            {% picture "static/mars/img/mars.png" "400x400" alt="Logo" style="width: 100%; height: 100%" %}
+            {% image "static/mars/img/mars.png" alt="Logo" style="width: 100%; height: 100%" %}
+              {% size 200x200 %}
+              {% size 400x400 640px %}
+            {% endimage %}
         </a>
         <div class="desktop-nav">
           <ul>

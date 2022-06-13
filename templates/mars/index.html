@@ -1,7 +1,7 @@
 {% extends './include/base.html' %}
 {% load static %}
 {% load thumbnail %}
-{% load custom %}
+{% load dmcs %}
 {% block head %}
   {{ block.super }}
   <style>
@@ -46,7 +46,10 @@
       {{ block.super }}
   {% endwith %}
     <div class="hero">
-      {% picture header_image.url "600x600" alt="{{header_image.alt}}" %}
+      {% image header_image.url alt="Header image" %}
+          {% size 600x600 %}
+          {% size 900x900 900px %}
+      {% endimage %}
       <div class="titles">
         <h1>
           {{title}}

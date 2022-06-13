@@ -1,12 +1,15 @@
-{% load custom %}
+{% load dmcs %}
 <div class="{{class|default:'large-grid'}}">
     {% for album in albums %}
         <div>
             <a href="{% url 'mars:album' album.slug %}">
-                {% picture album.image.url "320x320" crop="center" alt="{{album.title}}" className="light-on-hover" %}
+                {% image album.image.url crop="center" alt=album.title class="light-on-hover" %}
+                    {% size 160x160 %}
+                    {% size 320x320 640px %}
+                {% endimage %}
                 <div style="margin: 0.5rem 0 0.25rem 0">{{album.artist}}</div>
                 <div style="opacity: 0.67">{{album.title}}</div>
-            </a>
+            </a>Balue
         </div>
     {% endfor %}
 </div>

@@ -150,7 +150,6 @@
   .large-grid > * img, .small-grid > * img {
       border-radius: 5px;
       width: 100%;
-      box-shadow: var(--card-shadow);
   }
 
   .card {

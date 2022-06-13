@@ -72,7 +72,6 @@ The Git push assumes you're using SSH and you have your
 SSH public key configured. The Docker script also does
 SSH agent forwarding so i'll work inside the container.
 
-
 ### Building sites manually ###
 To see the build in action without triggering the auto publish,
 you can use the `publish` command:
@@ -80,3 +79,56 @@ you can use the `publish` command:
 ./manage.py publish --site=mars
 ./manage.py publish --site=venus
 ```
+
+## Image optimization ##
+An ```image``` tag is provided for use in templates.
+It automatically resizes images in multiple sizes and generates
+a WEBP version which is served to supported browsers.
+The tag is built on top of
+[sorl-thumbnail](https://github.com/jazzband/sorl-thumbnail).
+```
+{% load dmcs %}
+
+{% image album.image.url alt="{{album.title}}" %}
+    {% size 160x160 %}
+    {% size 320x320 640px %}
+{% endimage %}
+```
+
+Any number of sizes can be passed, with the format
+```
+{% size <w>x<h> <min-width> %}
+```
+The `min-width` parameter works similar to a media query;
+this image size will be used if the viewport is at least this wide.
+
+### Parameters ###
+<table class="table table-bordered table-striped">
+    <thead>
+    <tr>
+        <th>name</th>
+        <th>requred</th>
+        <th>description</th>
+    </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td>alt</td>
+          <td align="center">✓</td>
+          <td>Identical to the img tag alt attribute</td>
+        </tr>
+        <tr>
+          <td>style</td>
+          <td align="center"></td>
+          <td>Identical to HTML style attribute</td>
+        </tr>
+        <tr>
+          <td>class</td>
+          <td align="center"></td>
+          <td>Identical to HTML class attribute</td>
+        </tr>
+    </tbody>
+</table>
+
+Also any [options for sorl-thumbnail's thumbnail tag](https://sorl-thumbnail.readthedocs.io/en/latest/template.html#options)
+like `crop`, `quality`, etc. are passed through.
