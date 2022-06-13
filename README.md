@@ -38,6 +38,12 @@ sprinkle reactive components onto a server-rendered
 [Islands Architecture](https://www.patterns.dev/posts/islands-architecture)
 idea.
 
+## Example sites ##
+The starter kit comes with two demo sites, which are published here:
+* [Record store](https://kenfehling.github.io/mars-records)
+* [Cat cafe](https://kenfehling.github.io/venus-cats)
+
+
 ## Usage ##
 
 ### With Docker ###
@@ -62,7 +68,7 @@ SITES list in config.py
 
 <img src='./docs/site-setup.png'
      alt='Site setup screenshot'
-     width='600' />
+     width='575' />
 
 ### Publishing sites ###
 If there is a Git repository configured for the site it will automatically
