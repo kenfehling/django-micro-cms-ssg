@@ -94,7 +94,7 @@ It automatically resizes images in multiple sizes and generates
 a WEBP version which is served to supported browsers.
 The tag is built on top of
 [sorl-thumbnail](https://github.com/jazzband/sorl-thumbnail).
-```
+```django
 {% load dmcs %}
 
 {% image album.image.url alt="{{album.title}}" %}
@@ -104,7 +104,7 @@ The tag is built on top of
 ```
 
 Any number of sizes can be passed, with the format:
-```
+```django
 {% size <w>x<h> <min-width> %}
 ```
 The `min-width` parameter works similar to a media query;
