@@ -117,7 +117,7 @@ The tag is built on top of
         <tr>
           <td>alt</td>
           <td align="center">✓</td>
-          <td><code>img</code> tag <code>alt attribute</td>
+          <td><code>img</code> tag <code>alt</code> attribute</td>
         </tr>
         <tr>
           <td>style</td>
