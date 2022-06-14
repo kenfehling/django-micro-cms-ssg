@@ -100,17 +100,11 @@ The tag is built on top of
 {% image album.image.url alt="{{album.title}}" %}
     {% size 160x160 %}
     {% size 320x320 640px %}
+    {% size 640x640 1280px %}
 {% endimage %}
 ```
 
-Any number of sizes can be passed, with the format:
-```django
-{% size <w>x<h> <min-width> %}
-```
-The `min-width` parameter works similar to a media query;
-this image size will be used if the viewport is at least this wide.
-
-### Parameters ###
+### Keyword parameters ###
 <table class="table table-bordered table-striped">
     <thead>
     <tr>
@@ -134,6 +128,34 @@ this image size will be used if the viewport is at least this wide.
           <td>class</td>
           <td align="center"></td>
           <td>HTML <code>class</code> attribute</td>
+        </tr>
+    </tbody>
+</table>
+
+An `image` tag can contain any number of `size` tags:
+```django
+{% size <geometry> <min-width> %}
+```
+
+<table class="table table-bordered table-striped">
+    <thead>
+    <tr>
+        <th>name</th>
+        <th>requred</th>
+        <th>description</th>
+    </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td>geometry</td>
+          <td align="center">✓</td>
+          <td>Width by height in pixels</td>
+        </tr>
+        <tr>
+          <td><nobr>min-width</nobr></td>
+          <td align="center"></td>
+          <td>Similar to a media query;
+this image size will be used if the viewport is at least this wide.</td>
         </tr>
     </tbody>
 </table>
