@@ -132,6 +132,12 @@ The tag is built on top of
     </tbody>
 </table>
 
+Also any [options](https://sorl-thumbnail.readthedocs.io/en/latest/template.html#options)
+for sorl-thumbnail's `thumbnail` tag
+like `crop`, `quality`, etc. are passed through.
+
+### Sizes ###
+
 An `image` tag can contain any number of `size` tags:
 ```django
 {% size <geometry> <min-width> %}
@@ -159,6 +165,3 @@ this image size will be used if the viewport is at least this wide.</td>
         </tr>
     </tbody>
 </table>
-
-Also any [options for sorl-thumbnail's thumbnail tag](https://sorl-thumbnail.readthedocs.io/en/latest/template.html#options)
-like `crop`, `quality`, etc. are passed through.
