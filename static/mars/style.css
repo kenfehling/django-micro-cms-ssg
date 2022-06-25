@@ -13,8 +13,8 @@
 
   :root.light-theme {
     --background-color-primary: #FB7;
-    --background-color-secondary: #FDB;
-    --card-bg-color: #FFFFFF80;
+    --background-color-secondary: rgb(255, 237, 218);
+    --card-bg-color: #FFFFFFC0;
     --card-border: none;
     --text-primary-color: #222;
     --nav-fg-color: #222;
