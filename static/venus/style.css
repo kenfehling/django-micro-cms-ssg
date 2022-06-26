@@ -1,13 +1,13 @@
 :root  {
-    --background-color-primary: #e4cab0;
+    --background-color-primary: #e8d4c0;
     --background-color-secondary: #e9d0b8;
     --text-primary-color: #111;
-    --nav-bg-color: #ddbb99;
+    --nav-bg-color: #ddc0a4;
     --nav-fg-color: #000;
     --link-color: #714d00;
     --link-hover-color: #95714d;
     --mobile-nav-hover-color: #c4996ecc;
-    --card-bg-color: #ffffff80;
+    --card-bg-color: #ffffffC0;
     --card-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
@@ -23,6 +23,14 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+}
+
+a {
+    color: var(--link-color);
+}
+
+a:hover {
+    color: var(--link-hover-color);
 }
 
 nav, main {
