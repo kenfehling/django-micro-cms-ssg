@@ -70,6 +70,19 @@ SITES list in config.py
      alt='Site setup screenshot'
      width='575' />
 
+### Admin accounts ###
+There are no users or login credentials created by default. Create accounts in Django as you would normally.
+
+### Site groups ###
+Groups are automatically created for each site in the SITES list.
+To give a user access to control a site, simply add them to the group
+and they automatically get all permissions associated with that site.
+
+<img src='./docs/groups.png'
+     alt='User groups screenshot'
+     width='575' />
+
+
 ### Publishing sites ###
 If there is a Git repository configured for the site it will automatically
 push after some number of minutes since the last update made.
