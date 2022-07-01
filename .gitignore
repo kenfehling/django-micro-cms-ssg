@@ -3,3 +3,5 @@
 **/.DS_Store
 db.sqlite3
 build
+**/migrations/0*.py
+static-root

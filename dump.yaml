@@ -1,3 +1,21 @@
+- model: django_summernote.attachment
+  pk: 1
+  fields:
+    name: CMS landscape
+    file: django-summernote/2022-07-01/6dfb1328-849a-4c37-8801-7a65bd1e4df6.png
+    uploaded: 2022-07-01 08:40:27.879127+00:00
+- model: django_summernote.attachment
+  pk: 2
+  fields:
+    name: KeystoneJS
+    file: django-summernote/2022-07-01/af6b50d1-a61e-4347-bc0e-472f08a557af.png
+    uploaded: 2022-07-01 08:49:16.195608+00:00
+- model: django_summernote.attachment
+  pk: 3
+  fields:
+    name: Django Admin
+    file: django-summernote/2022-07-01/2fb1f201-aea8-4f5c-90b7-2d05b691fa10.png
+    uploaded: 2022-07-01 08:51:29.566122+00:00
 - model: all.sitesetup
   pk: 1
   fields:
@@ -5,8 +23,8 @@
     git_repo: git@github.com:kenfehling/mars-records.git
     site_root: https://kenfehling.github.io/mars-records/
     auto_publish_wait: 5
-    last_updated: 2022-06-05 20:30:51.931462+00:00
-    last_published: 2022-06-05 20:30:51.930979+00:00
+    last_updated: 2022-06-25 23:54:02.146251+00:00
+    last_published: 2022-06-25 23:54:02.144686+00:00
 - model: all.sitesetup
   pk: 2
   fields:
@@ -14,8 +32,17 @@
     git_repo: git@github.com:kenfehling/venus-cats.git
     site_root: https://kenfehling.github.io/venus-cats
     auto_publish_wait: 5
-    last_updated: 2022-06-05 18:34:24.447498+00:00
-    last_published: 2022-06-05 18:34:24.447021+00:00
+    last_updated: 2022-06-26 00:02:21.532673+00:00
+    last_published: 2022-06-26 00:02:21.528864+00:00
+- model: all.sitesetup
+  pk: 3
+  fields:
+    site: blog
+    git_repo: null
+    site_root: null
+    auto_publish_wait: 5
+    last_updated: 2022-06-30 08:34:11.607896+00:00
+    last_published: 2022-06-30 08:34:11.607644+00:00
 - model: mars.siteconfiguration
   pk: 1
   fields:
@@ -291,3 +318,266 @@
   fields:
     name: Mima
     image: static/venus/uploads/cats/sam-chang-5-ckjYvTZQw-unsplash.jpg
+- model: blog.siteconfiguration
+  pk: 1
+  fields:
+    title: ''
+    subtitle: ''
+    header_image: ''
+    about_text: ''
+- model: blog.post
+  pk: 1
+  fields:
+    slug: condor
+    title: Django Micro CMS/SSG
+    text: "<p dir=\"ltr\" style=\"line-height: 1.38; margin-top: 0pt; margin-bottom:
+      0pt;\"><span style=\"font-variant-ligatures: normal; font-variant-east-asian:
+      normal; font-variant-position: normal; vertical-align: baseline;\"><a href=\"http://github.com/kenfehling/django-micro-cms-ssg\"
+      target=\"_blank\">Django Micro CMS/SSG</a> is a starter project / proof of concept
+      for a simple, or \"micro\" Content Management System (CMS) combined with a Static
+      Site Generator (SSG).</span></p><h2 class=\"\"><span style=\"font-variant-ligatures:
+      normal; font-variant-east-asian: normal; font-variant-position: normal; vertical-align:
+      baseline;\">Why I created i​t</span></h2><p dir=\"ltr\" style=\"line-height:
+      1.38; margin-top: 0pt; margin-bottom: 0pt;\"><span style=\"font-variant-ligatures:
+      normal; font-variant-east-asian: normal; font-variant-position: normal; vertical-align:
+      baseline;\">In the course of preparing to enter the world of freelance web development,
+      I did a lot of research into what CMS to use. The responses fit mostly into
+      two camps:</span></p><p dir=\"ltr\" style=\"line-height: 1.38; margin-top: 0pt;
+      margin-bottom: 0pt;\"><span style=\"font-variant-ligatures: normal; font-variant-east-asian:
+      normal; font-variant-position: normal; vertical-align: baseline;\"><br></span></p><ol
+      style=\"margin-top: 0px; margin-bottom: 0px; padding-inline-start: 48px;\"><li
+      dir=\"ltr\" aria-level=\"1\" style=\"list-style-type: decimal; font-variant-ligatures:
+      normal; font-variant-east-asian: normal; font-variant-position: normal; vertical-align:
+      baseline;\"><p dir=\"ltr\" role=\"presentation\" style=\"line-height: 1.38;
+      margin-top: 0pt; margin-bottom: 0pt;\"><span style=\"font-variant-ligatures:
+      normal; font-variant-east-asian: normal; font-variant-position: normal; vertical-align:
+      baseline;\">Wordpress is the only real choice.</span></p></li><li dir=\"ltr\"
+      aria-level=\"1\" style=\"list-style-type: decimal; font-variant-ligatures: normal;
+      font-variant-east-asian: normal; font-variant-position: normal; vertical-align:
+      baseline;\"><p dir=\"ltr\" role=\"presentation\" style=\"line-height: 1.38;
+      margin-top: 0pt; margin-bottom: 0pt;\"><span style=\"font-variant-ligatures:
+      normal; font-variant-east-asian: normal; font-variant-position: normal; vertical-align:
+      baseline;\">Clients don’t end up using the CMS anyway.</span></p></li></ol><p></p><h3
+      dir=\"ltr\" style=\"line-height: 1.38; margin-top: 16pt; margin-bottom: 4pt;\"
+      class=\"\"><span style=\"font-variant-ligatures: normal; font-variant-east-asian:
+      normal; font-variant-position: normal; vertical-align: baseline;\">\"Wordpress
+      is the only real choice.\"</span></h3><p class=\"\">This answer doesn’t spark
+      joy as <a href=\"https://konmari.com\" target=\"_blank\">Marie Kondo</a> would
+      say. I’ve used Wordpress in the past and it didn’t really fit with the way I
+      like to work. I much prefer working directly with code, and I like having configuration
+      completely in code. To me Wordpress is more of a burden than a help.</p>\r\n\r\n<p
+      class=\"\">But it’s not about me, you say; it’s about the clients. Well, do
+      nontechnical clients actually want to use Wordpress? First of all Wordpress
+      is massive, there’s so much to do in there. Sure, they can learn and there’s
+      a ton of resources about it.</p><p><img src=\"/media/django-summernote/2022-07-01/6dfb1328-849a-4c37-8801-7a65bd1e4df6.png\"
+      style=\"width: 690px;\"></p><h3 dir=\"ltr\" style=\"line-height: 1.38; margin-top:
+      16pt; margin-bottom: 4pt;\" class=\"\"><span style=\"font-variant-ligatures:
+      normal; font-variant-east-asian: normal; font-variant-position: normal; vertical-align:
+      baseline;\">\"Clients don’t end up using the CMS anyway.\"</span></h3><p dir=\"ltr\"
+      style=\"line-height: 1.38; margin-top: 0pt; margin-bottom: 0pt;\"><span style=\"font-variant-ligatures:
+      normal; font-variant-east-asian: normal; font-variant-position: normal; vertical-align:
+      baseline;\">If you provide them with a complicated CMS, I can’t say I really
+      blame them. It’s daunting. Often they’ll be told by their developer, “Don’t
+      wory about these parts.” or “Don’t touch this.” They want to update the photo
+      on the home page and now they’re worried about screwing up the site. You can
+      hide some of this stuff away from them, but it takes extra effort. You end up
+      spending a lot of your time removing Wordpress complexity to give your client
+      the few simple features they actually care about.</span></p><p dir=\"ltr\" style=\"line-height:
+      1.38; margin-top: 0pt; margin-bottom: 0pt;\"><span style=\"font-variant-ligatures:
+      normal; font-variant-east-asian: normal; font-variant-position: normal; vertical-align:
+      baseline;\"><br></span>If clients do want to do updates at all, they usually
+      fall into two categories:</p><p dir=\"ltr\" style=\"line-height: 1.38; margin-top:
+      0pt; margin-bottom: 0pt;\"><br></p><ol style=\"margin-top: 0px; margin-bottom:
+      0px; padding-inline-start: 48px;\"><li dir=\"ltr\" aria-level=\"1\" style=\"list-style-type:
+      decimal; font-variant-ligatures: normal; font-variant-east-asian: normal; font-variant-position:
+      normal; vertical-align: baseline;\"><p dir=\"ltr\" role=\"presentation\" style=\"line-height:
+      1.38; margin-top: 0pt; margin-bottom: 0pt;\"><span style=\"font-variant-ligatures:
+      normal; font-variant-east-asian: normal; font-variant-position: normal; vertical-align:
+      baseline;\">Changing information: pictures, hours, addresses, phone numbers,
+      descriptions.</span></p></li><li dir=\"ltr\" aria-level=\"1\" style=\"list-style-type:
+      decimal; font-variant-ligatures: normal; font-variant-east-asian: normal; font-variant-position:
+      normal; vertical-align: baseline;\"><p dir=\"ltr\" role=\"presentation\" style=\"line-height:
+      1.38; margin-top: 0pt; margin-bottom: 0pt;\"><span style=\"font-variant-ligatures:
+      normal; font-variant-east-asian: normal; font-variant-position: normal; vertical-align:
+      baseline;\">Adding or editing items of an already established type. This would
+      be menu items for a restaurant, cats for a cat cafe. You’ve already designed
+      a template for this, they just need a form they can fill in.</span></p></li></ol><h2
+      class=\"\"><span style=\"font-variant-ligatures: normal; font-variant-east-asian:
+      normal; font-variant-position: normal; vertical-align: baseline;\">Existing
+      products and services</span></h2><p dir=\"ltr\" style=\"line-height: 1.38; margin-top:
+      0pt; margin-bottom: 0pt;\"><span style=\"font-variant-ligatures: normal; font-variant-east-asian:
+      normal; font-variant-position: normal; vertical-align: baseline;\">There are
+      several “headless CMS” products, both self-hosted and SaaS that provide these
+      basic capabilities. The three I evaluated that seemed closest to fitting:</span></p><p
+      dir=\"ltr\" style=\"line-height: 1.38; margin-top: 0pt; margin-bottom: 0pt;\"><span
+      style=\"font-variant-ligatures: normal; font-variant-east-asian: normal; font-variant-position:
+      normal; vertical-align: baseline;\"><br></span></p><ol style=\"margin-top: 0px;
+      margin-bottom: 0px; padding-inline-start: 48px;\"><li dir=\"ltr\" aria-level=\"1\"
+      style=\"list-style-type: decimal; font-variant-ligatures: normal; font-variant-east-asian:
+      normal; font-variant-position: normal; vertical-align: baseline;\"><p dir=\"ltr\"
+      role=\"presentation\" style=\"line-height: 1.38; margin-top: 0pt; margin-bottom:
+      0pt;\"><span style=\"font-variant-ligatures: normal; font-variant-east-asian:
+      normal; font-variant-position: normal; vertical-align: baseline;\">KeystoneJS
+      - Open source, exposes a GraphQL API that can be used from React, etc.</span></p></li><li
+      dir=\"ltr\" aria-level=\"1\" style=\"list-style-type: decimal; font-variant-ligatures:
+      normal; font-variant-east-asian: normal; font-variant-position: normal; vertical-align:
+      baseline;\"><p dir=\"ltr\" role=\"presentation\" style=\"line-height: 1.38;
+      margin-top: 0pt; margin-bottom: 0pt;\"><span style=\"font-variant-ligatures:
+      normal; font-variant-east-asian: normal; font-variant-position: normal; vertical-align:
+      baseline;\">Directus - SaaS, provides a visual menu for creating item types.
+      A bit buggy when I tried it.</span></p></li><li dir=\"ltr\" aria-level=\"1\"
+      style=\"list-style-type: decimal; font-variant-ligatures: normal; font-variant-east-asian:
+      normal; font-variant-position: normal; vertical-align: baseline;\"><p dir=\"ltr\"
+      role=\"presentation\" style=\"line-height: 1.38; margin-top: 0pt; margin-bottom:
+      0pt;\"><span style=\"font-variant-ligatures: normal; font-variant-east-asian:
+      normal; font-variant-position: normal; vertical-align: baseline;\">Netlify CMS
+      - Git-based CMS. Interesting, but many rough edges.</span></p></li></ol><p style=\"list-style-type:
+      decimal; font-variant-ligatures: normal; font-variant-east-asian: normal; font-variant-position:
+      normal; vertical-align: baseline;\"></p><ul></ul><p></p><p style=\"line-height:
+      1.38; margin-top: 0pt; margin-bottom: 0pt;\"><span style=\"font-variant-ligatures:
+      normal; font-variant-east-asian: normal; font-variant-position: normal; vertical-align:
+      baseline;\">There’s a plethora of others at </span><a href=\"https://jamstack.org/headless-cms/\"
+      target=\"_blank\"><span style=\"font-variant-ligatures: normal; font-variant-east-asian:
+      normal; font-variant-position: normal; text-decoration-skip: none; vertical-align:
+      baseline;\">jamstack.org</span></a><span style=\"font-variant-ligatures: normal;
+      font-variant-east-asian: normal; font-variant-position: normal; vertical-align:
+      baseline;\">. I evaluated dozens and found that they either did too much for
+      my taste, were too immature, or needed some features added to fit the requirements,
+      like multisite support.</span></p><p dir=\"ltr\" style=\"line-height: 1.38;
+      margin-top: 0pt; margin-bottom: 0pt;\"><span style=\"font-variant-ligatures:
+      normal; font-variant-east-asian: normal; font-variant-position: normal; vertical-align:
+      baseline;\"><br></span>KeystoneJS I felt was the closest to what I needed. I
+      got started building on top of it, filling in some of the features required
+      to make it the system I needed: support multiple sites, permissions for each
+      site, auto-delete the old versions of images. It was pretty easy to work with.</p><p><img
+      src=\"/media/django-summernote/2022-07-01/af6b50d1-a61e-4347-bc0e-472f08a557af.png\"
+      style=\"width: 100%;\"></p><p dir=\"ltr\" style=\"line-height: 1.38; margin-top:
+      0pt; margin-bottom: 0pt;\"><span style=\"font-variant-ligatures: normal; font-variant-east-asian:
+      normal; font-variant-position: normal; vertical-align: baseline;\">But I realized,
+      this admin interface reminded me of another system, one I didn’t mention yet.
+      One that most people don’t consider a CMS, yet provides similar capabilities
+      to the three I mentioned.</span></p><h2 class=\"\"><span style=\"font-variant-ligatures:
+      normal; font-variant-east-asian: normal; font-variant-position: normal; vertical-align:
+      baseline;\">Django Admin</span></h2><p dir=\"ltr\" style=\"line-height: 1.38;
+      margin-top: 0pt; margin-bottom: 0pt;\"><span style=\"font-variant-ligatures:
+      normal; font-variant-east-asian: normal; font-variant-position: normal; vertical-align:
+      baseline;\">It’s not quite a CMS but it’s nearly as close as many products that
+      are considered to headless CMSs. And it provides several advantages:</span></p><p
+      dir=\"ltr\" style=\"line-height: 1.38; margin-top: 0pt; margin-bottom: 0pt;\"><span
+      style=\"font-variant-ligatures: normal; font-variant-east-asian: normal; font-variant-position:
+      normal; vertical-align: baseline;\"><br></span></p><ol style=\"margin-top: 0px;
+      margin-bottom: 0px; padding-inline-start: 48px;\"><li dir=\"ltr\" aria-level=\"1\"
+      style=\"list-style-type: decimal; font-variant-ligatures: normal; font-variant-east-asian:
+      normal; font-variant-position: normal; vertical-align: baseline;\"><p dir=\"ltr\"
+      role=\"presentation\" style=\"line-height: 1.38; margin-top: 0pt; margin-bottom:
+      0pt;\"><span style=\"font-variant-ligatures: normal; font-variant-east-asian:
+      normal; font-variant-position: normal; vertical-align: baseline;\">Pure code
+      configuration. Repeatable setup and version control.</span></p></li><li dir=\"ltr\"
+      aria-level=\"1\" style=\"list-style-type: decimal; font-variant-ligatures: normal;
+      font-variant-east-asian: normal; font-variant-position: normal; vertical-align:
+      baseline;\"><p dir=\"ltr\" role=\"presentation\" style=\"line-height: 1.38;
+      margin-top: 0pt; margin-bottom: 0pt;\"><span style=\"font-variant-ligatures:
+      normal; font-variant-east-asian: normal; font-variant-position: normal; vertical-align:
+      baseline;\">Battle-tested. Django was released in 2005, has since become one
+      of the most popular web frameworks.</span></p></li><li dir=\"ltr\" aria-level=\"1\"
+      style=\"list-style-type: decimal; font-variant-ligatures: normal; font-variant-east-asian:
+      normal; font-variant-position: normal; vertical-align: baseline;\"><p dir=\"ltr\"
+      role=\"presentation\" style=\"line-height: 1.38; margin-top: 0pt; margin-bottom:
+      0pt;\"><span style=\"font-variant-ligatures: normal; font-variant-east-asian:
+      normal; font-variant-position: normal; vertical-align: baseline;\">Large community
+      and ecosystem.</span></p></li><li dir=\"ltr\" aria-level=\"1\" style=\"list-style-type:
+      decimal; font-variant-ligatures: normal; font-variant-east-asian: normal; font-variant-position:
+      normal; vertical-align: baseline;\"><p dir=\"ltr\" role=\"presentation\" style=\"line-height:
+      1.38; margin-top: 0pt; margin-bottom: 0pt;\"><span style=\"font-variant-ligatures:
+      normal; font-variant-east-asian: normal; font-variant-position: normal; vertical-align:
+      baseline;\">Extensible. Many libraries and plugins available, and easy to build
+      your own.</span></p><p dir=\"ltr\" role=\"presentation\" style=\"line-height:
+      1.38; margin-top: 0pt; margin-bottom: 0pt;\"><span style=\"font-variant-ligatures:
+      normal; font-variant-east-asian: normal; font-variant-position: normal; vertical-align:
+      baseline;\"><br></span></p></li></ol><p style=\"list-style-type: decimal; font-variant-ligatures:
+      normal; font-variant-east-asian: normal; font-variant-position: normal; vertical-align:
+      baseline;\"></p><ul></ul><p></p><p style=\"line-height: 1.38; margin-top: 0pt;
+      margin-bottom: 0pt;\"><img style=\"width: 698px;\" src=\"/media/django-summernote/2022-07-01/2fb1f201-aea8-4f5c-90b7-2d05b691fa10.png\"></p><p
+      style=\"line-height: 1.38; margin-top: 0pt; margin-bottom: 0pt;\"><br></p><h2
+      class=\"\">Static Site Generators (SSG)<br></h2><p dir=\"ltr\" style=\"line-height:
+      1.38; margin-top: 0pt; margin-bottom: 0pt;\"><span style=\"font-variant-ligatures:
+      normal; font-variant-east-asian: normal; font-variant-position: normal; vertical-align:
+      baseline;\">I’ve been talking all this time about CMSs but not yet about SSGs.
+      These headless CMSs have become popular lately due to the interest in generating
+      static sites. Remember KeystoneJS for instance. It’s often paired with React
+      or Vue. In the case you want a statically generated site, this becomes Next.js/Gatsby
+      or Nuxt/Vuepress. It’s not a bad way of building sites, but has some shortcomings.</span></p><p
+      style=\"line-height: 1.38; margin-top: 0pt; margin-bottom: 0pt;\"><br></p><ol
+      style=\"margin-top: 0px; margin-bottom: 0px; padding-inline-start: 48px;\"><li
+      dir=\"ltr\" aria-level=\"1\" style=\"list-style-type: decimal; font-variant-ligatures:
+      normal; font-variant-east-asian: normal; font-variant-position: normal; vertical-align:
+      baseline;\"><p dir=\"ltr\" role=\"presentation\" style=\"line-height: 1.38;
+      margin-top: 0pt; margin-bottom: 0pt;\"><span style=\"font-variant-ligatures:
+      normal; font-variant-east-asian: normal; font-variant-position: normal; vertical-align:
+      baseline;\">Overhead inherent in the client/server architecture. You have communication
+      over GraphQL, and both sides need to be kept in sync including schemas and types.
+      This leads to duplication of effort and more code to maintain.</span></p></li><li
+      dir=\"ltr\" aria-level=\"1\" style=\"list-style-type: decimal; font-variant-ligatures:
+      normal; font-variant-east-asian: normal; font-variant-position: normal; vertical-align:
+      baseline;\"><p dir=\"ltr\" role=\"presentation\" style=\"line-height: 1.38;
+      margin-top: 0pt; margin-bottom: 0pt;\"><span style=\"font-variant-ligatures:
+      normal; font-variant-east-asian: normal; font-variant-position: normal; vertical-align:
+      baseline;\">KeystoneJS is missing some pieces that make this kind of system
+      complete. Django Admin does too, in fact they’re missing some of the same pieces​​.</span></p></li><li
+      dir=\"ltr\" aria-level=\"1\" style=\"list-style-type: decimal; font-variant-ligatures:
+      normal; font-variant-east-asian: normal; font-variant-position: normal; vertical-align:
+      baseline;\"><p dir=\"ltr\" role=\"presentation\" style=\"line-height: 1.38;
+      margin-top: 0pt; margin-bottom: 0pt;\"><span style=\"font-variant-ligatures:
+      normal; font-variant-east-asian: normal; font-variant-position: normal; vertical-align:
+      baseline;\">JavaScript fatigue. I know, as a frontend dev myself this is a bit
+      cringe, but there’s some truth to it. The webpack, rollup, vite, babel, tsconfig
+      battle gets tiring.</span></p></li></ol><p style=\"line-height: 1.38; margin-top:
+      0pt; margin-bottom: 0pt;\"><br></p><p dir=\"ltr\" style=\"line-height: 1.38;
+      margin-top: 0pt; margin-bottom: 0pt;\"><span style=\"font-variant-ligatures:
+      normal; font-variant-east-asian: normal; font-variant-position: normal; vertical-align:
+      baseline;\">Django happens to have a few SSGs already, including django-distill
+      and django-bakery. I opted to use django-distill but you could easily swap it
+      out with django-bakery or even experiment with integrating another python SSG
+      like Pelican.</span></p><h2 class=\"\"><span style=\"font-variant-ligatures:
+      normal; font-variant-east-asian: normal; font-variant-position: normal; vertical-align:
+      baseline;\">Q&amp;A Section</span></h2><h3 dir=\"ltr\" style=\"line-height:
+      1.38; margin-top: 16pt; margin-bottom: 4pt;\" class=\"\"><span style=\"font-variant-ligatures:
+      normal; font-variant-east-asian: normal; font-variant-position: normal; vertical-align:
+      baseline;\">But... Django? Isn’t that the old way? What about React or Vue?</span></h3><p
+      dir=\"ltr\" style=\"line-height: 1.38; margin-top: 0pt; margin-bottom: 0pt;\"><span
+      style=\"font-variant-ligatures: normal; font-variant-east-asian: normal; font-variant-position:
+      normal; vertical-align: baseline;\">Hey, I know there’s a backlash to modern
+      web dev, this isn’t that. Well, not really. I appreciate what these new generation
+      of frameworks have given us. In fact, in the example sites I put in the starter
+      repo I used Vue. This is actually my first time trying Vue after years of using
+      React. In particular I used <a href=\"https://github.com/vuejs/petite-vue\"
+      target=\"_blank\">petite-vue</a>.</span></p><p dir=\"ltr\" style=\"line-height:
+      1.38; margin-top: 0pt; margin-bottom: 0pt;\"><span style=\"font-variant-ligatures:
+      normal; font-variant-east-asian: normal; font-variant-position: normal; vertical-align:
+      baseline;\"><br></span></p><p dir=\"ltr\" style=\"line-height: 1.38; margin-top:
+      0pt; margin-bottom: 0pt;\"><span style=\"font-variant-ligatures: normal; font-variant-east-asian:
+      normal; font-variant-position: normal; vertical-align: baseline;\">The idea
+      is that these sites are just Django templates, HTML, and CSS but sometimes you
+      want some complex interaction that would be nicer to manage with a modern JS
+      framework. There’s been a concept recently going around called <a href=\"https://www.patterns.dev/posts/islands-architecture\"
+      target=\"_blank\">Islands Architecture</a> which is similar to this idea but
+      with a bunch of partial hydration such and such included into it.</span></p><p
+      dir=\"ltr\" style=\"line-height: 1.38; margin-top: 0pt; margin-bottom: 0pt;\"></p><h3
+      class=\"\"><span style=\"color: inherit; font-family: inherit;\">Why not use
+      Django as an API and combine it with a JS frontend?</span><br></h3><p dir=\"ltr\"
+      style=\"line-height: 1.38; margin-top: 0pt; margin-bottom: 0pt;\"><span style=\"font-variant-ligatures:
+      normal; font-variant-east-asian: normal; font-variant-position: normal; vertical-align:
+      baseline;\">You could do that; keep all the CMS parts and ignore the SSG and
+      custom template tags.&nbsp;</span></p><h3 dir=\"ltr\" style=\"line-height: 1.38;
+      margin-top: 16pt; margin-bottom: 4pt;\"><span style=\"font-variant-ligatures:
+      normal; font-variant-east-asian: normal; font-variant-position: normal; vertical-align:
+      baseline;\">Why isn’t this a library?</span></h3><p dir=\"ltr\" style=\"line-height:
+      1.38; margin-top: 0pt; margin-bottom: 0pt;\"><span style=\"font-variant-ligatures:
+      normal; font-variant-east-asian: normal; font-variant-position: normal; vertical-align:
+      baseline;\">Maybe someday. That would take a lot more work, and I first want
+      some feedback on this idea to know whether I’m crazy or if this is actually
+      a really good way of making sites.</span></p><p style=\"line-height: 1.38; margin-top:
+      0pt; margin-bottom: 0pt;\"><br></p><p dir=\"ltr\" style=\"line-height: 1.38;
+      margin-top: 0pt; margin-bottom: 0pt;\"><span style=\"font-variant-ligatures:
+      normal; font-variant-east-asian: normal; font-variant-position: normal; vertical-align:
+      baseline;\">Let me know if this is crazy, brilliant, or somewhere in between.</span></p>"

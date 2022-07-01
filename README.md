@@ -62,9 +62,10 @@ bash scripts/init.sh
 ```
 
 ### Site setup ###
-In the Admin UI you can set the Git repo and the root URL for build.
-Sites are added to this menu automatically when added to the
-SITES list in config.py
+For each site, create a Django app like you normally would,
+but also add the site to the list of SITES in config.py.
+In the Admin UI you can set the Git repo and the root URL for the build.
+Sites are added to this menu automatically.
 
 <img src='./docs/site-setup.png'
      alt='Site setup screenshot'

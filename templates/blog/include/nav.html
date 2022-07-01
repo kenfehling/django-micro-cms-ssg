@@ -1,0 +1,130 @@
+{% load static %}
+{% load dmcs %}
+<script type="module">
+    import { createApp } from 'https://unpkg.com/petite-vue?module'
+
+    createApp({
+        $delimiters: ["[[", "]]"],
+      // exposed to all expressions
+
+      // methods
+      setTheme(theme) {
+        localStorage.setItem("user-theme", theme);
+        this.userTheme = theme;
+        document.documentElement.className = theme;
+      },
+      getTheme() {
+        return localStorage.getItem("user-theme");
+      },
+      toggleTheme() {
+        const activeTheme = localStorage.getItem("user-theme");
+        if (activeTheme === "light-theme") {
+          this.setTheme("dark-theme");
+        } else {
+          this.setTheme("light-theme");
+        }
+      },
+      getMediaPreference() {
+        const hasDarkPreference = window.matchMedia(
+          "(prefers-color-scheme: dark)"
+        ).matches;
+        if (hasDarkPreference) {
+          return "dark-theme";
+        } else {
+          return "light-theme";
+        }
+      },
+      init() {
+        const initUserTheme = this.getTheme() || this.getMediaPreference();
+        this.setTheme(initUserTheme);
+      }
+    }).mount()
+
+  </script>
+  
+  <header v-scope v-effect="init()">
+    <nav>
+        <a class="logo" style="display: none" :style="logoStyle" href="{% url 'blog:home' %}">
+
+        </a>
+
+        <ul>
+          <li><a href="{% url 'blog:home' %}"><i title="Home" class="fa-solid fa-house-chimney"></i></a></li>
+          <li><a href="{% url 'blog:posts' %}"><i title="Posts" class="fa-solid fa-table-list"></i></a></li>
+          <li>
+            <button class="icon-button" title="Toggle Dark Mode" aria-label="Toggle Dark Mode" :onclick="toggleTheme">
+              <i class="fa-solid fa-circle-half-stroke"></i>
+            </button>
+          </li>
+        </ul>
+    </nav>
+  </header>
+
+  <style scoped>
+    .navbar nav {
+      height: 55px;
+      width: 100%;
+      padding: 0 0.5rem;
+      box-sizing: border-box;
+      z-index: 1000;
+      top: 0;
+      color: var(--nav-fg-color);
+      background-color: var(--background-color-primary);
+    }
+
+    header li a {
+      padding: 2px 5px;
+    }
+
+    header li a:visited {
+      color: var(--link-color);
+    }
+
+    header li a:hover {
+      text-decoration: none;
+      color: var(--link-hover-color);
+    }
+
+    nav {
+      float: right;
+    }
+
+    header ul {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        flex-direction: row;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    header nav li {
+        line-height: 55px;
+        text-align: center;
+        margin: auto;
+        font-weight: 500;
+        box-sizing: border-box;
+    }
+
+    .navbar.is-default {
+        grid-template-columns: auto 1fr;
+        padding: 0 5rem 1.5rem 5.25rem;
+    }
+
+    .icon-button {
+      background-color: transparent;
+      border: none;
+      cursor: pointer;
+      padding: 0;
+    }
+    
+
+    nav li i {
+      width: 50px;
+      height: 54px;
+      font-size: 1.45rem;
+      color: var(--nav-fg-color);
+    }
+
+</style>

@@ -1,5 +1,4 @@
 from django.contrib import admin
-from django.db import models
 from mars.models import Album, Artist, SiteConfiguration
 from solo.admin import SingletonModelAdmin
 

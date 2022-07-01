@@ -1,0 +1,137 @@
+:root {
+  --background-color-primary: #2f343a;
+  --background-color-secondary: #26282B;
+  --card-bg-color: #181818;
+  --card-border: thin solid #111;
+  --text-primary-color: #EEEEEEF6;
+  --link-color: #6cf;
+  --link-hover-color: var(--link-color);
+  --nav-fg-color:  var(--link-color);
+  --card-shadow: none;
+}
+
+:root.light-theme {
+  --background-color-primary: #cef;
+  --background-color-secondary: #cdf;
+  --card-bg-color: #FFFFFFC0;
+  --card-border: none;
+  --text-primary-color: #111111F6;
+  --link-color: #0776ad;
+  --link-hover-color: var(--link-color);
+  --nav-fg-color: var(--link-color);
+  --card-shadow: 0 0 6px rgba(0, 0, 0, 0.5);
+}
+
+body {
+  font-size: 17px;
+  font-family: monospace;
+  background-color: var(--background-color-primary);
+  color: var(--text-primary-color);
+}
+
+main, header, footer {
+  max-width: 720px;
+  margin: auto;
+}
+
+main, footer {
+  padding: 20px;
+}
+
+header {
+  padding: 10px 20px 20px 20px;
+}
+
+h1 {
+  opacity: 0.94;
+}
+
+h2 {
+  margin-top: 2rem;
+  opacity: 0.98;
+}
+
+h3 {
+  padding-top: 0.5rem;
+}
+
+main li {
+  margin-bottom: 0.5rem;
+}
+
+a {
+  color: var(--link-color);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+a:hover, a:focus,  a:active {
+  color: var(--link-hover-color);
+}
+
+p, footer {
+  line-height: 1.45rem;
+}
+
+footer {
+  margin-top: 0.25rem;
+  font-size: 14px;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--nav-bg-color);
+}
+
+footer i {
+    font-size: 2.5rem;
+    margin-left: 10px;
+}
+
+footer a {
+  font-weight: normal;
+}
+
+footer .social a {
+  color: inherit;
+}
+
+@media screen and (max-width: 449px) {
+  footer .text, footer .social {
+      text-align: center;
+  }
+
+  footer .text {
+    line-height: 1.6rem;
+    margin-bottom: 0.5rem;
+  }
+
+  footer i {
+    font-size: 2.5rem;
+    margin-left: 0.8rem;
+  }
+}
+
+.post img {
+  max-width: 100%;
+  height: auto;
+}
+
+@media screen and (min-width: 450px) {
+    footer .text {
+      line-height: 1.6rem;
+        text-align: left;
+        float: left;
+    }
+    
+    footer .social {
+        text-align: right;
+        float: right;
+    }
+
+    footer i {
+      font-size: 3rem;
+      margin-left: 0.8rem;
+    }
+}

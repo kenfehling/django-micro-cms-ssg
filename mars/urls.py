@@ -14,7 +14,6 @@ def album_gen():
 
 app_name = 'mars'
 urlpatterns = (
-    # server_path('admin/', admin.site.urls),distill_path
     *path('', views.home),
     *path('shop', views.shop),
     *path('about', views.about),

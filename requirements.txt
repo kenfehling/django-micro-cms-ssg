@@ -7,3 +7,4 @@ Pillow
 markdown
 more_itertools
 pyyaml
+django-summernote

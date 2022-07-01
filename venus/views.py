@@ -1,16 +1,8 @@
 from django.shortcuts import render
-from all.models import SiteSetup
-from venus.models import Cat, SiteConfiguration
+from utils import get_site_cfg, get_site_setup
+from venus.models import Cat
 from django.utils.html import format_html
 import markdown
-
-
-def get_site_cfg():
-    return SiteConfiguration.objects.first()
-
-
-def get_site_setup():
-    return SiteSetup.objects.filter(site='venus').first()
 
 
 def get_default_og_image():

@@ -1,16 +1,8 @@
 from django.shortcuts import render
-from all.models import SiteSetup
-from mars.models import Album, Artist, SiteConfiguration
+from mars.models import Album, Artist
 from django.utils.html import format_html
 import markdown
-
-
-def get_site_cfg():
-    return SiteConfiguration.objects.first()
-
-
-def get_site_setup():
-    return SiteSetup.objects.filter(site='mars').first()
+from utils import get_site_cfg, get_site_setup
 
 
 def get_default_og_image():

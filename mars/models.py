@@ -1,24 +1,11 @@
 from django.db import models
-from django.template.defaultfilters import slugify
-from all.models import BaseSiteConfiguration
+from all.models import BaseSiteConfiguration, ModelWithSlug
 
 
 class SiteConfiguration(BaseSiteConfiguration):
     subtitle = models.CharField(max_length=64)
     header_image = models.ImageField(upload_to='static/mars/uploads')
     about_text = models.TextField()
-
-
-class ModelWithSlug(models.Model):
-    slug = models.SlugField(max_length=255, unique=True, editable=False)
-
-    def save(self, *args, **kwargs):
-        if not self.slug:
-            self.slug = slugify(self.__str__())
-        super().save(*args, **kwargs)
-
-    class Meta:
-        abstract = True
 
 
 class Artist(ModelWithSlug):

@@ -32,9 +32,11 @@ ALLOWED_HOSTS = ['*']
 # Application definition
 
 INSTALLED_APPS = [
+    'django_summernote',
     'all',
     'mars',
     'venus',
+    'blog',
     'django_distill',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -132,8 +134,10 @@ STATICFILES_DIRS = [
 ]
 
 THUMBNAIL_PREFIX = 'static/cache/'
-# STATIC_ROOT = 'temp/static/'
-STATIC_URL = '/' + os.environ.get('PUBLIC_ROOT', '') + 'static/'
+STATIC_ROOT = 'static-root/'
+MEDIA_ROOT = 'media-root/'
+MEDIA_URL = '/' + os.environ.get('PUBLIC_ROOT', '') + 'media/'
+STATIC_URL = '/' + os.environ.get('PUBLIC_ROOT', '') + STATIC_ROOT
 
 
 # Default primary key field type

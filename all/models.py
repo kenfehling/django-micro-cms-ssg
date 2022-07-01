@@ -1,6 +1,7 @@
 from django.db import models
 from solo.models import SingletonModel
 from datetime import datetime, timezone
+from django.template.defaultfilters import slugify
 
 _help_style = 'line-height:1.15rem'
 
@@ -67,3 +68,15 @@ class BaseSiteConfiguration(SingletonModel):
 
     def __str__(self):
         return self.__class__.__module__.split('.')[0]
+
+
+class ModelWithSlug(models.Model):
+    slug = models.SlugField(max_length=255, unique=True, editable=False)
+
+    def save(self, *args, **kwargs):
+        if not self.slug:
+            self.slug = slugify(self.__str__())
+        super().save(*args, **kwargs)
+
+    class Meta:
+        abstract = True
